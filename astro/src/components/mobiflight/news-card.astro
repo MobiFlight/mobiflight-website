@@ -1,0 +1,29 @@
+---
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/starwind/card"
+
+interface Props {
+  date: string
+  title: string
+  teaser: string
+  href: string
+}
+
+const { date, title, teaser, href } = Astro.props
+---
+
+<Card>
+  <CardHeader>
+    <p class="text-sm text-muted-foreground">{date}</p>
+    <CardTitle class="text-lg">{title}</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <CardDescription>{teaser}</CardDescription>
+    <a href={href} class="text-primary underline mt-3 inline-block">Read more →</a>
+  </CardContent>
+</Card>
