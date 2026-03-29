@@ -4,7 +4,7 @@
     "logo": "/sponsors/vkb_logo.png",
     "href": "https://vkb-sim.pro/?utm_source=mobiflight",
     "amount": 200,
-    "size": 130
+    "size": 150
   },
   {
     "name": "Simionic",
@@ -32,7 +32,7 @@
     "logo": "/sponsors/FlightSimBuilder-Logo.png",
     "href": "https://flightsimbuilder.com/?ref=mobiflight",
     "amount": 100,
-    "size": 75
+    "size": 80
   },
   {
     "name": "WingFlash",
@@ -60,7 +60,7 @@
     "logo": "/sponsors/rowsfire-logo-small.png",
     "href": "https://rowsfire.com/?ref=qkxijpvj&utm_source=mobiflight",
     "amount": 50,
-    "size": 100
+    "size": 90
   },
   {
     "name": "WingFlex",
@@ -74,20 +74,20 @@
     "logo": "/sponsors/prodesksim-small.png",
     "href": "https://prodesksim.com/?ref=mobiflight",
     "amount": 100,
-    "size": 65
+    "size": 60
   },
   {
     "name": "Octavi",
     "logo": "/sponsors/octavi-logo-small.png",
     "href": "https://octavi.net/?ref=mobiflight",
     "amount": 100,
-    "size": 180
+    "size": 150
   },
   {
     "name": "LoungePilot",
     "logo": "/sponsors/loungepilot.png",
     "href": "https://www.loungepilot.com/?ref=mobiflight&utm_source=mobiflight",
     "amount": 100,
-    "size": 120
+    "size": 110
   }
 ]
