@@ -1,0 +1,42 @@
+---
+import IconGitHub from "@/components/mobiflight/icons/icon-github.astro"
+import YoutubeIcon from "@/components/mobiflight/icons/icon-youtube.astro"
+import DiscordIcon from "@/components/mobiflight/icons/icon-discord.astro"
+
+interface Props {
+  variant: "full" | "icon"
+}
+const { variant } = Astro.props
+
+const socials = [
+  {
+    icon: IconGitHub,
+    name: "GitHub",
+    href: "https://github.com/mobiflight",
+  },
+  {
+    icon: YoutubeIcon,
+    name: "YouTube",
+    href: "https://www.youtube.com/@MobiFlight",
+  },
+  {
+    icon: DiscordIcon,
+    name: "Discord",
+    href: "https://mobiflight.com/discord",
+  },
+]
+---
+
+{
+  socials.map((social) => (
+    <a
+      href={social.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-muted-foreground hover:text-primary transition-colors"
+    >
+      <span class={ variant === "full" ? "" : "sr-only" }>{social.name}</span>
+      <social.icon class="w-6 h-6" />
+    </a>
+  ))
+}

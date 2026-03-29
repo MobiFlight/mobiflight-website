@@ -9,6 +9,8 @@ import Button from '@/components/starwind/button/Button.astro'
 import IconDownload from '@/components/mobiflight/icons/icon-download.astro'
 import IconShop from '@/components/mobiflight/icons/icon-shop.astro'
 import IconDocs from '@/components/mobiflight/icons/icon-docs.astro'
+import IconHome from '@/components/mobiflight/icons/icon-home.astro'
+import Footer from '@/components/mobiflight/footer.astro'
 ---
 
 <html lang="en">
@@ -36,8 +38,10 @@ import IconDocs from '@/components/mobiflight/icons/icon-docs.astro'
             ><img
               src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
               alt="MobiFlight"
-              class="h-8 mr-4"
-            /></a
+              class="h-8 mr-4 hidden lg:inline-block"
+            />
+            <IconHome class="h-6 w-6 lg:hidden" />
+            </a
           >
           <a href="/about">Project</a>
           <a href="/club">Membership</a>
@@ -69,7 +73,7 @@ import IconDocs from '@/components/mobiflight/icons/icon-docs.astro'
       <slot />
       <!-- your content is injected here -->
     </article>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
   <style>
     h1 {
