@@ -11,21 +11,17 @@ interface Props {
 const { headline, tagline, ctaText, ctaLink, imageSrc } = Astro.props
 ---
 
-<div
-  class="relative w-full lg:max-h-96 overflow-hidden bg-linear-to-br from-gray-700 to-sky-900"
+<section
+  class="w-full bg-cover bg-center bg-no-repeat min-h-96"
+  style={`background-image: linear-gradient(to bottom right, rgba(17,24,39,0.7), rgba(12,74,110,0.7)), url('${imageSrc}')`}
 >
-  <img
-    src={imageSrc}
-    alt="Hero Image"
-    class="object-cover blur-xs opacity-40 w-full"
-  />
-  <div class="absolute inset-0 flex items-center justify-center">
-    <Container>
-      <div class="flex flex-col gap-6 items-start text-white max-w-4xl">
-        <h1 class="text-7xl font-bold text-background">{headline}</h1>
-        <p class="text-2xl">{tagline}</p>
-        {ctaText && ctaLink && <Button href={ctaLink}>{ctaText}</Button>}
-      </div>
-    </Container>
-  </div>
-</div>
+  <Container class="py-8">
+    <div class="flex flex-col gap-6 items-start text-white max-w-4xl">
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+        {headline}
+      </h1>
+      <p class="text-lg sm:text-xl lg:text-2xl">{tagline}</p>
+      {ctaText && ctaLink && <Button href={ctaLink}>{ctaText}</Button>}
+    </div>
+  </Container>
+</section>

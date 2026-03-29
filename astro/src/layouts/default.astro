@@ -4,13 +4,13 @@
 const { title } = Astro.props
 // style import
 import "@/styles/mobiflight.css"
-import Badge from '@/components/starwind/badge/Badge.astro'
-import Button from '@/components/starwind/button/Button.astro'
-import IconDownload from '@/components/mobiflight/icons/icon-download.astro'
-import IconShop from '@/components/mobiflight/icons/icon-shop.astro'
-import IconDocs from '@/components/mobiflight/icons/icon-docs.astro'
-import IconHome from '@/components/mobiflight/icons/icon-home.astro'
-import Footer from '@/components/mobiflight/footer.astro'
+import Badge from "@/components/starwind/badge/Badge.astro"
+import Button from "@/components/starwind/button/Button.astro"
+import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
+import IconShop from "@/components/mobiflight/icons/icon-shop.astro"
+import IconDocs from "@/components/mobiflight/icons/icon-docs.astro"
+import IconHome from "@/components/mobiflight/icons/icon-home.astro"
+import Footer from "@/components/mobiflight/footer.astro"
 ---
 
 <html lang="en">
@@ -26,14 +26,17 @@ import Footer from '@/components/mobiflight/footer.astro'
     />
     <!-- <BaseHead title={title}/> -->
   </head>
-  <body class="flex flex-col">
+  <body class="flex flex-col overflow-x-hidden">
     <div
       class="flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5"
     >
       <nav
-        class="flex flex-row gap-8 px-8 py-4 items-center w-full max-w-6xl justify-between font-semibold uppercase text-white"
+        class="flex flex-row gap-4 px-4 sm:px-6 lg:px-8 py-4 items-center w-full max-w-6xl justify-between font-semibold uppercase text-white"
       >
-        <div id="primary-navigation" class="flex flex-row gap-8 items-center">
+        <div
+          id="primary-navigation"
+          class="flex flex-row gap-4 md:gap-6 lg:gap-8 items-center text-sm sm:text-base"
+        >
           <a href="/"
             ><img
               src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
@@ -41,31 +44,40 @@ import Footer from '@/components/mobiflight/footer.astro'
               class="h-8 mr-4 hidden lg:inline-block"
             />
             <IconHome class="h-6 w-6 lg:hidden" />
-            </a
-          >
+          </a>
           <a href="/about">Project</a>
           <a href="/club">Membership</a>
           <a href="/services">Services</a>
         </div>
-        <div id="secondary-navigation" class="flex flex-row gap-8 items-center font-normal normal-case">
+        <div
+          id="secondary-navigation"
+          class="hidden md:flex flex-row gap-4 lg:gap-8 items-center font-normal normal-case"
+        >
           <a
-          class="flex items-center gap-1"
-          href="https://docs.mobiflight.com"
-          target="_blank"
-          rel="noopener noreferrer"><IconDocs /> Docs</a
+            class="flex items-center gap-1"
+            href="https://docs.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><IconDocs /><span class="hidden lg:inline">Docs</span></a
           >
           <a
-          class="flex items-center gap-1"
-          href="https://shop.mobiflight.com"
-          target="_blank"
-          rel="noopener noreferrer"><IconShop /> Shop</a
+            class="flex items-center gap-1"
+            href="https://shop.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><IconShop /><span class="hidden lg:inline">Shop</span></a
           >
           <a
-          href="https://mobiflight.com/discord"
-          target="_blank"
-          rel="noopener noreferrer">Support</a
+            href="https://mobiflight.com/discord"
+            target="_blank"
+            rel="noopener noreferrer">Support</a
           >
-          <Button href="/download" size="sm" class="bg-background text-foreground hover:bg-background/80"><IconDownload /> Download</Button>
+          <Button
+            href="/download"
+            size="sm"
+            class="hidden lg:flex bg-background text-foreground hover:bg-background/80"
+            ><IconDownload /> Download</Button
+          >
         </div>
       </nav>
     </div>
@@ -75,9 +87,4 @@ import Footer from '@/components/mobiflight/footer.astro'
     </article>
     <Footer />
   </body>
-  <style>
-    h1 {
-      font-size: 2rem;
-    }
-  </style>
 </html>
