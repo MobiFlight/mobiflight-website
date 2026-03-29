@@ -10,6 +10,7 @@ import "@/styles/mobiflight.css"
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="/font/Manrope-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
     <!-- <BaseHead title={title}/> -->
   </head>
   <body class="flex flex-col">
@@ -19,12 +20,11 @@ import "@/styles/mobiflight.css"
       <nav
         class="flex flex-row gap-8 px-8 py-4 items-center w-full max-w-6xl justify-items-start font-semibold uppercase text-white"
       >
-        <img
+        <a href="/"><img
           src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
-          alt="Logo"
+          alt="MobiFlight"
           class="h-8 mr-4"
-        />
-        <a href="/">Home</a>
+        /></a>
         <a href="/download">Download</a>
         <a href="/club">Club</a>
         <a href="/services">Services</a>

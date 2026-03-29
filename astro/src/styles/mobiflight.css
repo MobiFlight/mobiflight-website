@@ -2,8 +2,8 @@
   font-family: "Manrope";
   src: url("/font/Manrope-VariableFont_wght.woff2") format("woff2");
   font-style: normal;
-  font-weight: 200 800;
-  font-display: swap;
+  font-weight: 200 800; 
+  font-display: optional;
 }
 
 @import "./starwind.css";
@@ -11,7 +11,7 @@
 @theme {
   --font-display: "Manrope", sans-serif;
   --font-sans: "Manrope", sans-serif;
-}
+} 
 
 @layer base {
   html {
