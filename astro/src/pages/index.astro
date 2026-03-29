@@ -1,16 +1,73 @@
 ---
 import Default from "../layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
 
 const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 ---
 
-<Default title="MobiFlight">
+<Default title="MobiFlight — Build Your Cockpit. Fly Your Sim.">
   <Hero
-    headline="Welcome to MobiFlight"
-    tagline="Your ultimate flight simulation companion"
-    ctaText="Get Started"
+    headline="Build Your Cockpit. Fly Your Sim."
+    tagline="MobiFlight is the free, open-source middleware that connects Arduino and Raspberry Pi Pico microcontrollers to your favorite flight simulator — turning physical switches, LEDs, and gauges into a real cockpit experience."
+    ctaText="Download Free"
     ctaLink="/download"
     imageSrc={heroImage}
   />
+
+  <!-- Quick Navigation Hub -->
+  <Container>
+    <section class="py-8">
+      <h2 class="text-3xl font-bold mb-6">Everything MobiFlight</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="https://docs.mobiflight.com" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-muted transition-colors">📖 Documentation</a>
+        <a href="https://shop.mobiflight.com" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-muted transition-colors">🛒 Shop</a>
+        <a href="https://mobiflight.com/discord" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-muted transition-colors">💬 Community (Discord)</a>
+        <a href="https://hubhop.mobiflight.com" target="_blank" rel="noopener noreferrer" class="p-4 border rounded-lg hover:bg-muted transition-colors">✈️ HubHop Presets</a>
+        <a href="/club" class="p-4 border rounded-lg hover:bg-muted transition-colors">⭐ MobiFlight Club</a>
+        <a href="/services" class="p-4 border rounded-lg hover:bg-muted transition-colors">🤝 Professional Services</a>
+      </div>
+    </section>
+  </Container>
+
+  <!-- News & Updates -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-6">News & Updates</h2>
+      <ul class="flex flex-col gap-6">
+        <li>
+          <p class="text-sm text-muted-foreground">March 15, 2026</p>
+          <h3 class="text-xl font-semibold">MobiFlight v11 Released</h3>
+          <p class="mt-1">Fresh new look, redesigned UI, new project concepts and easier sharing. The biggest release ever.</p>
+          <a href="/download" class="text-primary underline mt-1 inline-block">Read more →</a>
+        </li>
+        <li>
+          <p class="text-sm text-muted-foreground">February 10, 2026</p>
+          <h3 class="text-xl font-semibold">FSWeekend 2026 Recap</h3>
+          <p class="mt-1">We had an amazing time meeting the community. Thank you to everyone who stopped by.</p>
+          <a href="#" class="text-primary underline mt-1 inline-block">Read more →</a>
+        </li>
+        <li>
+          <p class="text-sm text-muted-foreground">January 5, 2026</p>
+          <h3 class="text-xl font-semibold">New Hardware Support Added</h3>
+          <p class="mt-1">Raspberry Pi Pico W and several new Arduino-compatible boards are now fully supported.</p>
+          <a href="#" class="text-primary underline mt-1 inline-block">Read more →</a>
+        </li>
+      </ul>
+    </section>
+  </Container>
+
+  <!-- Sponsor Wall -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">Powered by Our Sponsors</h2>
+      <p class="text-muted-foreground mb-6">MobiFlight is free because of the amazing people and companies who support it.</p>
+      <div class="flex flex-wrap gap-4 mb-6">
+        <div class="px-6 py-4 border rounded-lg text-muted-foreground">Your logo here</div>
+        <div class="px-6 py-4 border rounded-lg text-muted-foreground">Your logo here</div>
+        <div class="px-6 py-4 border rounded-lg text-muted-foreground">Your logo here</div>
+      </div>
+      <a href="https://github.com/sponsors/MobiFlight" target="_blank" rel="noopener noreferrer" class="underline text-primary font-semibold">Become a Sponsor →</a>
+    </section>
+  </Container>
 </Default>

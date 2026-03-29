@@ -1,0 +1,107 @@
+---
+import Default from "../layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
+
+const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+---
+
+<Default title="Download MobiFlight — It's Free.">
+  <Hero
+    headline="Download MobiFlight — It's Free."
+    tagline="Free. Open source. No strings attached. Always."
+    ctaText="Download v11"
+    ctaLink="https://github.com/MobiFlight/MobiFlight-Connector/releases"
+    imageSrc={heroImage}
+  />
+
+  <!-- Latest Release -->
+  <Container>
+    <section class="py-8">
+      <h2 class="text-3xl font-bold mb-2">Latest Release</h2>
+      <p class="text-muted-foreground mb-4">Version <strong>v11</strong> &mdash; Released March 15, 2026</p>
+      <p class="mb-6">Fresh new look, redesigned UI, new project concepts, easier sharing, and improved stability.</p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="https://github.com/MobiFlight/MobiFlight-Connector/releases/latest/download/MobiFlight-v11-Setup.exe"
+          class="inline-block px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Download MobiFlight-v11-Setup.exe
+        </a>
+        <a
+          href="https://github.com/MobiFlight/MobiFlight-Connector/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block px-6 py-3 border rounded-lg font-semibold hover:bg-muted transition-colors"
+        >
+          All Releases on GitHub &rarr;
+        </a>
+      </div>
+    </section>
+  </Container>
+
+  <!-- What's New in v11 -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-4">What's New in v11</h2>
+      <ul class="list-disc pl-6 flex flex-col gap-2 text-lg">
+        <li>Fresh new look and completely redesigned UI</li>
+        <li>New project concepts for easier hardware configuration</li>
+        <li>Easier sharing of configs with the community</li>
+        <li>Improved stability and performance throughout</li>
+        <li>Full MSFS 2024 support</li>
+      </ul>
+      <a
+        href="https://github.com/MobiFlight/MobiFlight-Connector/releases"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block mt-6 text-primary underline font-semibold"
+      >
+        Full changelog on GitHub &rarr;
+      </a>
+    </section>
+  </Container>
+
+  <!-- Release Video -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-4">See It in Action</h2>
+      <p class="text-muted-foreground mb-4">The Biggest MobiFlight Release Ever! — Release 11</p>
+      <div class="aspect-video w-full max-w-3xl rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+        <iframe
+          src="https://www.youtube.com/embed/placeholder"
+          title="MobiFlight v11 Release Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          class="w-full h-full"
+        ></iframe>
+      </div>
+    </section>
+  </Container>
+
+  <!-- Previous Versions & GitHub -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-4">Previous Versions & Source Code</h2>
+      <p class="mb-4">MobiFlight is fully open source. Explore the source code, contribute, or report issues.</p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="https://github.com/MobiFlight/MobiFlight-Connector/releases"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary underline font-semibold"
+        >
+          All releases on GitHub &rarr;
+        </a>
+        <a
+          href="https://github.com/MobiFlight"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary underline font-semibold"
+        >
+          GitHub Organisation &rarr;
+        </a>
+      </div>
+    </section>
+  </Container>
+</Default>

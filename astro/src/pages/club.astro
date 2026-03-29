@@ -1,0 +1,70 @@
+---
+import Default from "../layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
+
+const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+
+const benefits = [
+  { icon: "🎟️", title: "Early Access", description: "Beta builds and new features before public release." },
+  { icon: "📰", title: "Members Newsletter", description: "Exclusive updates, behind-the-scenes insights, upcoming features." },
+  { icon: "🏷️", title: "Shop Discounts", description: "Member pricing on hardware bundles and event tickets." },
+  { icon: "🎖️", title: "Member Badge", description: "Recognized role in the Discord community server." },
+  { icon: "📅", title: "Event Priority", description: "First access to workshop signups at events like FSWeekend." },
+  { icon: "❤️", title: "Support the Project", description: "Membership directly funds open-source development." },
+]
+---
+
+<Default title="MobiFlight Club — Fly Further Together">
+  <Hero
+    headline="Join the MobiFlight Club — Fly Further Together"
+    tagline="For the builders, tinkerers, and sim pilots who want more."
+    ctaText="Become a Member"
+    ctaLink="#join"
+    imageSrc={heroImage}
+  />
+
+  <!-- Benefits -->
+  <Container>
+    <section class="py-8">
+      <h2 class="text-3xl font-bold mb-6">Member Benefits</h2>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {benefits.map((b) => (
+          <li class="flex gap-4 p-4 border rounded-lg">
+            <span class="text-3xl">{b.icon}</span>
+            <div>
+              <h3 class="font-semibold text-lg">{b.title}</h3>
+              <p class="text-muted-foreground">{b.description}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </Container>
+
+  <!-- Social Proof -->
+  <Container>
+    <section class="py-8 border-t text-center">
+      <p class="text-5xl font-bold">7,000+</p>
+      <p class="text-xl text-muted-foreground mt-2">community members worldwide</p>
+    </section>
+  </Container>
+
+  <!-- CTAs -->
+  <Container>
+    <section id="join" class="py-8 border-t flex flex-wrap gap-4">
+      <a
+        href="#"
+        class="inline-block px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Become a Member
+      </a>
+      <a
+        href="#"
+        class="inline-block px-6 py-3 border rounded-lg font-semibold hover:bg-muted transition-colors"
+      >
+        Already a member? Log in
+      </a>
+    </section>
+  </Container>
+</Default>

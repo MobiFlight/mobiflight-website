@@ -1,0 +1,88 @@
+---
+import Default from "../layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
+
+const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+---
+
+<Default title="MobiFlight for Professionals — Services">
+  <Hero
+    headline="MobiFlight for Professionals"
+    tagline="Take your hardware or business to the next level with the team behind MobiFlight."
+    imageSrc={heroImage}
+  />
+
+  <!-- Service 1: Hardware Onboarding -->
+  <Container>
+    <section class="py-8">
+      <h2 class="text-3xl font-bold mb-2">Get Your Hardware MobiFlight-Ready</h2>
+      <p class="text-sm text-muted-foreground mb-4">For existing hardware vendors &amp; flight sim panel manufacturers</p>
+      <p class="mb-6">
+        Your customers are already asking for MobiFlight compatibility. We help you get there. We analyze your
+        hardware's interface, develop the MobiFlight device definition, test firmware integration, and publish
+        your device to the MobiFlight ecosystem — so your customers can plug in and fly.
+      </p>
+      <a href="mailto:info@mobiflight.com" class="text-primary underline font-semibold">
+        Let's talk about your hardware &rarr;
+      </a>
+    </section>
+  </Container>
+
+  <!-- Service 2: Build Controllers -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">Bring Your Controller Concept to Life</h2>
+      <p class="text-sm text-muted-foreground mb-4">For startups and entrepreneurs developing new flight sim hardware</p>
+      <p class="mb-6">
+        From button mapping to encoder logic to display output — MobiFlight provides the software foundation so
+        you can focus on hardware design. We consult on architecture, help integrate MobiFlight support from day
+        one, and support you through development and launch.
+      </p>
+      <a href="mailto:info@mobiflight.com" class="text-primary underline font-semibold">
+        Start building with us &rarr;
+      </a>
+    </section>
+  </Container>
+
+  <!-- Service 3: Consulting & Support -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">Expert Help for Your Cockpit Build</h2>
+      <p class="text-sm text-muted-foreground mb-4">For sim enthusiasts and prosumer cockpit builders</p>
+      <p class="mb-6">
+        Whether you're building a full A320 home cockpit or wiring up your first overhead panel, our consulting
+        service connects you directly with MobiFlight expertise. We help you plan your setup, solve configuration
+        challenges, and get everything running smoothly.
+      </p>
+      <a href="mailto:info@mobiflight.com" class="text-primary underline font-semibold">
+        Book a consultation &rarr;
+      </a>
+    </section>
+  </Container>
+
+  <!-- Service 4: Sponsoring -->
+  <Container>
+    <section class="py-8 border-t">
+      <h2 class="text-3xl font-bold mb-2">Sponsor MobiFlight</h2>
+      <p class="text-sm text-muted-foreground mb-4">For companies and individuals who benefit from the platform</p>
+      <p class="mb-4">
+        MobiFlight is free and open source — and stays that way because of sponsors. GitHub Sponsors is the
+        primary way businesses and power users invest in the project's future. Premium sponsors receive logo
+        placement, early access to features, and recognition across the MobiFlight community.
+      </p>
+      <ul class="list-disc pl-6 mb-6 flex flex-col gap-1">
+        <li>Individual sponsor</li>
+        <li>Business / Premium sponsor (logo on website + in-app)</li>
+      </ul>
+      <a
+        href="https://github.com/sponsors/MobiFlight"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary underline font-semibold"
+      >
+        Become a Sponsor on GitHub &rarr;
+      </a>
+    </section>
+  </Container>
+</Default>
