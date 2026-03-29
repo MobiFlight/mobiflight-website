@@ -27,11 +27,11 @@ const { headline, tagline, ctas, imageSrc } = Astro.props
 ---
 
 <section
-  class="w-full bg-cover bg-center bg-no-repeat min-h-96"
+  class="w-full bg-cover bg-center bg-no-repeat min-h-120 flex items-center"
   style={`background-image: linear-gradient(to bottom right, rgba(17,24,39,0.7), rgba(12,74,110,0.7)), url('${imageSrc}')`}
 >
   <Container class="py-8">
-    <div class="flex flex-col gap-6 items-start text-white max-w-4xl">
+    <div class="flex flex-col gap-6 items-start text-white max-w-3xl">
       <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
         {headline}
       </h1>
