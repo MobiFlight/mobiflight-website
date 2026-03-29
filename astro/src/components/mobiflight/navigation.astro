@@ -6,27 +6,28 @@ import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
 ---
 
 <div
-  class="relative flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5"
+  class="flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5"
   data-mobile-nav
 >
   <nav
-    class="flex flex-row gap-4 px-4 sm:px-6 lg:px-8 py-4 items-center w-full max-w-6xl justify-between font-semibold uppercase text-white"
+    class="flex flex-row gap-4 px-6 py-4 items-center w-full max-w-6xl justify-between font-semibold uppercase text-white"
   >
-    <a href="/"
-      ><img
-        src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
-        alt="MobiFlight"
-        class="h-8"
-      />
-    </a>
+    <div id="primary-navigation" class="flex flex-row gap-4 md:gap-6">
+      <a href="/"
+        ><img
+          src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
+          alt="MobiFlight"
+          class="h-8"
+        />
+      </a>
 
-    <div
-      id="primary-navigation"
-      class="hidden md:flex flex-row gap-4 md:gap-6 lg:gap-8 items-center text-sm sm:text-base"
-    >
-      <a href="/about">Project</a>
-      <a href="/club">Membership</a>
-      <a href="/services">Services</a>
+      <div
+        class="hidden md:flex flex-row gap-4 md:gap-6 lg:gap-8 items-center text-sm sm:text-base"
+      >
+        <a href="/about">Project</a>
+        <a href="/club">Membership</a>
+        <a href="/services">Services</a>
+      </div>
     </div>
     <div
       id="secondary-navigation"
