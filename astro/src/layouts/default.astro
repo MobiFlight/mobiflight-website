@@ -10,7 +10,13 @@ import "@/styles/mobiflight.css"
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preload" href="/font/Manrope-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/font/Manrope-VariableFont_wght.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <!-- <BaseHead title={title}/> -->
   </head>
   <body class="flex flex-col">
@@ -18,16 +24,37 @@ import "@/styles/mobiflight.css"
       class="flex justify-center bg-linear-to-br from-sky-500 to-emerald-500 dark:from-indigo-500/10 dark:via-sky-500/0 dark:via-70% dark:to-emerald-500/5"
     >
       <nav
-        class="flex flex-row gap-8 px-8 py-4 items-center w-full max-w-6xl justify-items-start font-semibold uppercase text-white"
+        class="flex flex-row gap-8 px-8 py-4 items-center w-full max-w-6xl justify-between font-semibold uppercase text-white"
       >
-        <a href="/"><img
-          src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
-          alt="MobiFlight"
-          class="h-8 mr-4"
-        /></a>
-        <a href="/download">Download</a>
-        <a href="/club">Club</a>
-        <a href="/services">Services</a>
+        <div id="primary-navigation" class="flex flex-row gap-8 items-center">
+          <a href="/"
+            ><img
+              src="https://shop.mobiflight.com/wp-content/uploads/2026/02/mobiflight-logo-wide-small.png"
+              alt="MobiFlight"
+              class="h-8 mr-4"
+            /></a
+          >
+          <a href="/download">Download</a>
+          <a href="/club">Club</a>
+          <a href="/services">Services</a>
+        </div>
+        <div id="secondary-navigation" class="flex flex-row gap-8 items-center">
+          <a
+            href="https://docs.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer">Docs</a
+          >
+          <a
+            href="https://shop.mobiflight.com"
+            target="_blank"
+            rel="noopener noreferrer">Shop</a
+          >
+          <a
+            href="https://mobiflight.com/discord"
+            target="_blank"
+            rel="noopener noreferrer">Discord</a
+          >
+        </div>
       </nav>
     </div>
     <article class="flex flex-col items-center w-full">
