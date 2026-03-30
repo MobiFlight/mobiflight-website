@@ -1,0 +1,216 @@
+---
+import Default from "../layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
+import Button from "@/components/starwind/button/Button.astro"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/starwind/card"
+import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
+import IconDocs from "@/components/mobiflight/icons/icon-docs.astro"
+import IconDiscord from "@/components/mobiflight/icons/icon-discord.astro"
+
+const heroImage =
+  "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+
+const problems = [
+  "Configuring controllers takes too much time.",
+  "Different vendors mean different tools and fragmented workflows.",
+  "Adding DIY hardware usually means too much technical glue work.",
+]
+
+const features = [
+  {
+    title: "One solution for all your controllers",
+    teaser:
+      "Bring hardware from different brands and device types together in one place instead of juggling multiple tools.",
+  },
+  {
+    title: "Take off and fly faster",
+    teaser:
+      "Use shared presets and community profiles to get a working setup faster instead of starting everything from scratch.",
+  },
+  {
+    title: "Make it fit your setup",
+    teaser:
+      "Adjust size, theme, and layout with a responsive, accessible interface that works across screens and touch setups.",
+  },
+  {
+    title: "Build your own cockpit ideas",
+    teaser:
+      "Add DIY controllers and custom panels without getting stuck in low-level communication details.",
+  },
+  {
+    title: "Get more from every controller",
+    teaser:
+      "Use advanced logic to create smarter behavior and more realistic workflows, with no coding required.",
+  },
+]
+
+const examples = [
+  {
+    title: "Mixed-vendor home cockpit",
+    teaser:
+      "Run different panels and devices together without bouncing between separate vendor apps.",
+    placeholder: "Placeholder: mixed-vendor cockpit image",
+  },
+  {
+    title: "DIY panel expansion",
+    teaser:
+      "Add your own switches, encoders, and displays when your setup outgrows what the market offers.",
+    placeholder: "Placeholder: DIY controller image",
+  },
+  {
+    title: "Shared profiles that save time",
+    teaser:
+      "Start from community presets and adapt them to your aircraft instead of building every profile from zero.",
+    placeholder: "Placeholder: profile sharing image",
+  },
+]
+
+const flightsimToProfileUrl = "https://flightsim.to/miscellaneous/mobiflight-profiles"
+const discordUrl = "https://mobiflight.com/discord"
+---
+
+<Default title="MobiFlight Features">
+  <Hero
+    headline="Spend less time configuring and more time flying"
+    tagline="MobiFlight is the free, open-source solution for bringing your flight sim controllers together in one place."
+    ctas={[
+      {
+        icon: IconDownload,
+        text: "Download MobiFlight",
+        link: "/download",
+        variant: "primary",
+      },
+      {
+        icon: IconDocs,
+        text: "View Docs",
+        link: "https://docs.mobiflight.com",
+        variant: "outline",
+      },
+    ]}
+    imageSrc={heroImage}
+  />
+
+  <Container>
+    <section class="py-10">
+      <h2 class="text-3xl font-bold mb-2">Why people look for MobiFlight</h2>
+      <p class="text-muted-foreground mb-6 max-w-3xl">
+        The problem is usually not hardware. The problem is making all of it
+        work together in a way that feels practical, flexible, and worth your
+        time.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {
+          problems.map((problem) => (
+            <article class="rounded-xl border p-5 bg-muted/20">
+              <p class="font-medium">{problem}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="py-10 border-t">
+      <h2 class="text-3xl font-bold mb-2">What MobiFlight helps you do</h2>
+      <p class="text-muted-foreground mb-6 max-w-3xl">
+        MobiFlight brings controllers together, reduces setup effort, and gives
+        you room to grow from simple profiles to advanced cockpit logic.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {
+          features.map((feature) => (
+            <Card>
+              <CardHeader>
+                <CardTitle>{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>{feature.teaser}</CardDescription>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="py-10 border-t">
+      <h2 class="text-3xl font-bold mb-2">What this looks like in practice</h2>
+      <p class="text-muted-foreground mb-6 max-w-3xl">
+        The fastest way to understand MobiFlight is to look at the kinds of
+        setups it unlocks.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {
+          examples.map((example) => (
+            <Card>
+              <CardHeader>
+                <div class="rounded-xl border-2 border-dashed border-primary/20 bg-primary/5 min-h-36 flex items-center justify-center p-4 text-center text-xs text-muted-foreground mb-2">
+                  {example.placeholder}
+                </div>
+                <CardTitle>{example.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>{example.teaser}</CardDescription>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <Button
+          href={flightsimToProfileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="outline"
+        >
+          Browse community profiles
+        </Button>
+        <Button
+          href={discordUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="secondary"
+          class="[&>svg]:size-4"
+        >
+          <IconDiscord />
+          Ask the community
+        </Button>
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="py-10 border-t">
+      <div
+        class="rounded-2xl border bg-muted/30 p-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
+      >
+        <div>
+          <h2 class="text-2xl font-bold mb-2">
+            Ready to build your setup your way?
+          </h2>
+          <p class="text-muted-foreground max-w-2xl">
+            Start with MobiFlight, fly sooner, and keep growing your cockpit at
+            your own pace.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <Button href="/download" class="[&>svg]:size-4">
+            <IconDownload />
+            Download MobiFlight
+          </Button>
+          <Button href="/about" variant="outline">Why trust the project?</Button
+          >
+        </div>
+      </div>
+    </section>
+  </Container>
+</Default>

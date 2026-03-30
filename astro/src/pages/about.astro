@@ -3,7 +3,6 @@ import Default from "../layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import Button from "@/components/starwind/button/Button.astro"
-import Badge from "@/components/starwind/badge/Badge.astro"
 import {
   Card,
   CardContent,
@@ -12,164 +11,244 @@ import {
   CardTitle,
 } from "@/components/starwind/card"
 import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
+import IconGithub from "@/components/mobiflight/icons/icon-github.astro"
+import IconDiscord from "@/components/mobiflight/icons/icon-discord.astro"
 
-const heroImage = "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+const heroImage =
+  "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 
-const simulators = ["MSFS 2024", "MSFS 2020", "X-Plane 12", "X-Plane 11", "P3D", "FSX"]
-
-const usp = [
+const facts = [
   {
-    title: "Plug-and-play and DIY friendly",
-    teaser: "Start with off-the-shelf hardware or build your own cockpit panels with Arduino and Raspberry Pi.",
+    value: "Award Winner",
+    teaser: "Flight Sim Award for best DIY hardware and tooling",
   },
   {
-    title: "Works with major simulators",
-    teaser: "Control your setup in Microsoft Flight Simulator, X-Plane, and other leading simulation platforms.",
+    value: "14,000",
+    teaser: "registered Discord community members",
   },
   {
-    title: "Open source and community-driven",
-    teaser: "Use MobiFlight for free, improve it together, and learn from one of the most active sim communities.",
+    value: "30,000+",
+    teaser: "shared presets and profiles",
   },
   {
-    title: "From first switch to full cockpit",
-    teaser: "Scale from a small home setup to complex multi-module cockpits with one consistent toolchain.",
+    value: "18,000",
+    teaser: "monthly active users in the app",
   },
-]
-
-const team = [
-  { role: "Founder", description: "Vision, product direction, and community stewardship." },
-  { role: "Core Development", description: "Desktop app, firmware, and simulator integration." },
-  { role: "Community & Support", description: "Discord moderation, events, and user guidance." },
-  { role: "Content & Ecosystem", description: "HubHop presets, releases, and external partnerships." },
 ]
 ---
 
-<Default title="About MobiFlight">
+<Default title="MobiFlight Project">
   <Hero
-    headline="MobiFlight Project Information"
-    tagline="MobiFlight connects cockpit hardware to your flight simulator and gives both sim enthusiasts and DIY builders a powerful platform to fly with real controls."
-    ctas={[{ icon: IconDownload,text:"Download MobiFlight", link: "/download", variant: "primary" }]}
+    headline="By the community, for the community"
+    tagline="MobiFlight is a free, open-source project built by a passionate team and supported by an active global community of flight sim enthusiasts."
+    ctas={[
+      {
+        icon: IconDownload,
+        text: "Download MobiFlight",
+        link: "/download",
+        variant: "primary",
+      },
+    ]}
     imageSrc={heroImage}
   />
 
   <Container>
-    <section class="py-8">
-      <h2 class="text-3xl font-bold mb-4">What It Does and Why Use It</h2>
-      <p class="text-lg mb-4">
-        MobiFlight is the bridge between your simulator and physical cockpit controls. It helps you turn hardware inputs
-        and outputs into a practical, immersive flying experience without vendor lock-in.
-      </p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <Badge>Built for Off-the-Shelf Hardware Users</Badge>
-        <Badge>Built for DIY Cockpit Builders</Badge>
-      </div>
-      <p class="text-muted-foreground">
-        Whether you buy ready-made panels or build your own from scratch, MobiFlight supports both paths.
-      </p>
-    </section>
-  </Container>
-
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-4">Features and USPs</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {usp.map((item) => (
-          <Card>
-            <CardHeader>
-              <CardTitle>{item.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription>{item.teaser}</CardDescription>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-      <h3 class="text-xl font-semibold mb-3">Supported Simulators</h3>
-      <div class="flex flex-wrap gap-2">
-        {simulators.map((sim) => (
-          <Badge>{sim}</Badge>
-        ))}
+    <section class="py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-3xl font-bold">
+            From DIY solution to universal controller ecosystem
+          </h2>
+          <p class="text-lg">
+            MobiFlight was originally created as a small tool by the founder,
+            Sebastian, to help him build a custom flight simulator cockpit.
+          </p>
+          <p class="text-muted-foreground">
+            It quickly gained popularity among flight simulation enthusiasts,
+            allowing users to build self-built cockpit panels and controllers in
+            an inexpensive way., and integrate them into simulators without
+            special expertise.
+          </p>
+          <p class="text-muted-foreground">
+            Over time, it evolved into something bigger: a flexible,
+            user-friendly control center for all kinds of flight sim
+            controllers, backed by an active community with thousands of users
+            worldwide and a strong open-source mindset.
+          </p>
+        </div>
+        <div
+          class="rounded-2xl border-2 border-dashed border-primary/20 bg-primary/5 min-h-64 flex items-center justify-center p-6 text-center text-muted-foreground"
+        >
+          Placeholder: project history image, community collage, or award visual
+        </div>
       </div>
     </section>
   </Container>
 
   <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-4">The Ecosystem</h2>
+    <section class="py-10 border-t">
+      <h2 class="text-3xl font-bold mb-8">The people behind it</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border rounded-xl p-6">
+          <h3 class="text-xl font-semibold mb-3">
+            A dedicated team with a shared passion
+          </h3>
+          <p class="text-muted-foreground mb-4">
+            MobiFlight is led by its founder Sebastian, full-time, supported by
+            a group of dedicated moderators and code contributors. We are all
+            people who care deeply about flight simulation and believe great
+            tooling should be free and open.
+          </p>
+          <Button
+            href="https://github.com/MobiFlight"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="outline"
+            class="[&>svg]:size-4"
+          >
+            <IconGithub />
+            See contributors on GitHub
+          </Button>
+        </div>
+        <div class="border rounded-xl p-6">
+          <h3 class="text-xl font-semibold mb-3">
+            A community of 14,000 and growing
+          </h3>
+          <p class="text-muted-foreground mb-4">
+            The community is what makes MobiFlight extraordinary. Members share
+            presets and hardware builds, answer questions, file bug reports, and
+            help newcomers get their first controller working within hours.
+          </p>
+          <Button
+            href="https://mobiflight.com/discord"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            class="[&>svg]:size-4"
+          >
+            <IconDiscord />
+            Join the Discord server
+          </Button>
+        </div>
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="py-10 border-t">
+      <h2 class="text-3xl font-bold mb-2">The numbers tell the story</h2>
+      <p class="text-muted-foreground mb-6">
+        MobiFlight is a well-established, thriving open-source project. Many
+        thousands of users are benefiting from its features and active
+        community. A great number also contributes back in the form of presets,
+        shared knowledge, software development, and direct support.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        {
+          facts.map((item) => (
+            <Card>
+              <CardHeader>
+                <CardTitle class="text-2xl">{item.value}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>{item.teaser}</CardDescription>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="py-10 border-t">
+      <h2 class="text-3xl font-bold mb-2">How you can get involved</h2>
+      <p class="text-muted-foreground mb-8 max-w-3xl">
+        <span class="font-bold">Every contribution matters.</span>
+        Open source is powered by people — and there is no single right way to contribute.
+        Every member of the community finds their own path, and every contribution
+        moves the project forward.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <article class="border rounded-xl p-5">
+          <h3 class="text-lg font-semibold mb-2">Write code</h3>
+          <p class="text-muted-foreground text-sm">
+            Developers contribute to the app, connector libraries, and the
+            websites that power the MobiFlight ecosystem.
+          </p>
+        </article>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-lg font-semibold mb-2">Report bugs</h3>
+          <p class="text-muted-foreground text-sm">
+            Documenting an issue and helping reproduce it is how problems get
+            fixed. Every bug report makes MobiFlight more reliable.
+          </p>
+        </article>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-lg font-semibold mb-2">Create presets on HubHop</h3>
+          <p class="text-muted-foreground text-sm">
+            Sharing your aircraft and controller presets on HubHop means
+            thousands of others can benefit from your work immediately.
+          </p>
+        </article>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-lg font-semibold mb-2">Suggest new features</h3>
+          <p class="text-muted-foreground text-sm">
+            Great ideas come from real users. Filing a feature request on GitHub
+            shapes what MobiFlight becomes next.
+          </p>
+        </article>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-lg font-semibold mb-2">Help others on Discord</h3>
+          <p class="text-muted-foreground text-sm">
+            Answering questions, sharing your experience, and welcoming
+            newcomers keeps the community strong and growing.
+          </p>
+        </article>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-lg font-semibold mb-2">Share your project</h3>
+          <p class="text-muted-foreground text-sm">
+            Build logs, 3D models, wiring plans, and best practices shared with
+            the community inspire others and move the hobby forward.
+          </p>
+        </article>
+      </div>
+    </section>
+  </Container>
+
+  <Container>
+    <section class="py-10 border-t">
+      <h2 class="text-3xl font-bold mb-2">Why people trust the project</h2>
+      <p class="text-muted-foreground mb-6 max-w-3xl">
+        Trust comes from openness, helpful community members, and a project that
+        keeps getting better with every release.
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <article class="border rounded-lg p-4">
-          <h3 class="text-xl font-semibold mb-2">MobiFlight Connector</h3>
-          <p>The desktop application is the core bridge between hardware devices and simulator events.</p>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-xl font-semibold mb-2">
+            Free to use and open source
+          </h3>
+          <p class="text-muted-foreground">
+            You can see how the project evolves, follow releases, and benefit
+            from a platform that is not locked away behind one vendor.
+          </p>
         </article>
-        <article class="border rounded-lg p-4">
-          <h3 class="text-xl font-semibold mb-2">Off-the-Shelf Controller Support</h3>
-          <p>Use compatible, ready-to-buy hardware and get productive quickly with proven device support.</p>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-xl font-semibold mb-2">A huge helpful community</h3>
+          <p class="text-muted-foreground">
+            Support, presets, shared knowledge, and real build experience make
+            the ecosystem much easier to grow into.
+          </p>
         </article>
-        <article class="border rounded-lg p-4">
-          <h3 class="text-xl font-semibold mb-2">DIY Firmware Stack</h3>
-          <p>Flash firmware for Arduino and Raspberry Pi Pico boards and build fully custom cockpit devices.</p>
+        <article class="border rounded-xl p-5">
+          <h3 class="text-xl font-semibold mb-2">Built around real users</h3>
+          <p class="text-muted-foreground">
+            The project grew from real cockpit-building needs, and provides
+            solutions that are practical, flexible, and valuable for every
+            flight simmer.
+          </p>
         </article>
       </div>
-    </section>
-  </Container>
-
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-4">Community and HubHop</h2>
-      <p class="mb-4">
-        MobiFlight thrives because people share profiles, wiring ideas, and lessons learned. The community is built around
-        helping each other improve.
-      </p>
-      <p class="mb-6">
-        HubHop is the preset database that helps you discover and share mappings when creating your own profiles.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <Button href="https://mobiflight.com/discord" target="_blank" rel="noopener noreferrer">Join Discord</Button>
-        <Button href="https://hubhop.mobiflight.com" target="_blank" rel="noopener noreferrer" variant="secondary">
-          Open HubHop
-        </Button>
-      </div>
-    </section>
-  </Container>
-
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-4">Open Source on GitHub</h2>
-      <p class="mb-4">
-        GitHub is where we build in the open, track issues, share releases, and collaborate with contributors.
-      </p>
-      <Button href="https://github.com/MobiFlight" target="_blank" rel="noopener noreferrer" variant="outline">
-        Visit MobiFlight on GitHub
-      </Button>
-    </section>
-  </Container>
-
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-4">About the Founder</h2>
-      <div class="border rounded-lg p-5">
-        <p class="text-muted-foreground">
-          Placeholder: Add founder story, background, mission, and vision for the project.
-        </p>
-      </div>
-    </section>
-  </Container>
-
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-4">About the Team</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {team.map((member) => (
-          <article class="border rounded-lg p-4">
-            <h3 class="text-xl font-semibold mb-2">{member.role}</h3>
-            <p class="text-muted-foreground">{member.description}</p>
-          </article>
-        ))}
-      </div>
-      <p class="mt-5 text-sm text-muted-foreground">
-        This site intentionally stays static. Member login and account functionality will be handled separately via
-        club.mobiflight.com.
-      </p>
     </section>
   </Container>
 </Default>
