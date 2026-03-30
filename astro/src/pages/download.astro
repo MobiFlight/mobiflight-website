@@ -5,6 +5,7 @@ import Container from "@/components/mobiflight/container.astro"
 import Button from "@/components/starwind/button/Button.astro"
 import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
 import IconGithub from "@/components/mobiflight/icons/icon-github.astro"
+import YoutubeVideo from "@/components/mobiflight/youtube-video.astro"
 
 const heroImage =
   "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
@@ -83,12 +84,11 @@ const heroImage =
       <div
         class="aspect-video w-full max-w-3xl rounded-lg overflow-hidden bg-muted flex items-center justify-center"
       >
-        <iframe
+        <YoutubeVideo
           src="https://www.youtube.com/embed/Nm7twnZsqIo?si=4L_kjoosjWsyNgQz"
-          title="MobiFlight v11 Release Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full"></iframe>
+          title="Getting started video"
+          class="h-full w-full"
+        />
       </div>
     </section>
   </Container>
