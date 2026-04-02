@@ -13,14 +13,35 @@ import {
 import IconDownload from "@/components/mobiflight/icons/icon-download.astro"
 import IconDocs from "@/components/mobiflight/icons/icon-docs.astro"
 import IconDiscord from "@/components/mobiflight/icons/icon-discord.astro"
+import heroImage from "@/images/hero-features.jpg"
+import { Image } from "astro:assets"
 
-const heroImage =
-  "/images/hero-features.jpg"
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "@/images/features/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+)
 
 const problems = [
-  "Configuring controllers takes too much time.",
-  "Different vendors mean different tools and fragmented workflows.",
-  "Adding DIY hardware usually means too much technical glue work.",
+  {
+    title: "In-Game controller setup is nerve wrecking",
+    teaser:
+      "The built-in assignment UI is hard to navigate, settings for addon aircraft are incomplete or missing, and there's no way to share or import profiles. A sim update can wipe everything and you're back to square one.",
+  },
+  {
+    title: "Default support for hardware is limited",
+    teaser:
+      "You can only map inputs - outputs like LEDs, steppers, and displays aren't supported at all. Slow APIs like DirectInput mean encoders skip events and precision hardware can't perform the way it should.",
+  },
+  {
+    title: "Vendor app overload",
+    teaser:
+      "Many hardware brands ship their own software. Multiple apps you need to learn, which are running in the background eating up CPU and RAM that your sim needs. And on top: only the most popular planes are supported.",
+  },
+  {
+    title: "DIY: buildable but not connectable",
+    teaser:
+      "Affordable components and 3D printers mean anyone can build a panel. But connecting it to the sim requires software engineering knowledge most builders don't have — and shouldn't need.",
+  },
 ]
 
 const features = [
@@ -72,7 +93,8 @@ const examples = [
   },
 ]
 
-const flightsimToProfileUrl = "https://flightsim.to/miscellaneous/mobiflight-profiles"
+const flightsimToProfileUrl =
+  "https://flightsim.to/miscellaneous/mobiflight-profiles"
 const discordUrl = "https://mobiflight.com/discord"
 ---
 
@@ -94,22 +116,24 @@ const discordUrl = "https://mobiflight.com/discord"
         variant: "outline",
       },
     ]}
-    imageSrc={heroImage}
+    imageSrc={heroImage.src}
   />
 
   <Container>
-    <section class="py-10">
-      <h2 class="text-3xl font-bold mb-2">Why people look for MobiFlight</h2>
-      <p class="text-muted-foreground mb-6 max-w-3xl">
+    <section class="py-10 flex flex-col gap-4">
+      <h2 class="text-3xl font-bold">Why simmers are using MobiFlight</h2>
+      <p class="text-muted-foreground max-w-3xl">
         The problem is usually not hardware. The problem is making all of it
         work together in a way that feels practical, flexible, and worth your
         time.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <p>These are the common challenges MobiFlight helps solve:</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {
           problems.map((problem) => (
             <article class="rounded-xl border p-5 bg-muted/20">
-              <p class="font-medium">{problem}</p>
+              <p class="font-medium">{problem.title}</p>
+              <p class="text-muted-foreground">{problem.teaser}</p>
             </article>
           ))
         }
@@ -148,20 +172,18 @@ const discordUrl = "https://mobiflight.com/discord"
         The fastest way to understand MobiFlight is to look at the kinds of
         setups it unlocks.
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 grid-flow-dense">
         {
-          examples.map((example) => (
-            <Card>
-              <CardHeader>
-                <div class="rounded-xl border-2 border-dashed border-primary/20 bg-primary/5 min-h-36 flex items-center justify-center p-4 text-center text-xs text-muted-foreground mb-2">
-                  {example.placeholder}
-                </div>
-                <CardTitle>{example.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{example.teaser}</CardDescription>
-              </CardContent>
-            </Card>
+          Object.values(images).map((image, index) => (
+            <Image
+              class="object-cover"
+              format="webp"
+              src={image.default}
+              alt=""
+              height={400}
+              width={400}
+              loading={index < 20 ? "eager" : "lazy"}
+            />
           ))
         }
       </div>
@@ -207,8 +229,7 @@ const discordUrl = "https://mobiflight.com/discord"
             <IconDownload />
             Download MobiFlight
           </Button>
-          <Button href="/about" variant="outline">Why trust the project?</Button
-          >
+          <Button href="/about" variant="outline">Learn more about us</Button>
         </div>
       </div>
     </section>

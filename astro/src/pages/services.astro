@@ -2,15 +2,14 @@
 import Default from "../layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
-
-const heroImage = "/images/hero-services.jpg"
+import heroImage from "@/images/hero-services.jpg"
 ---
 
 <Default title="MobiFlight for Professionals — Services">
   <Hero
     headline="MobiFlight for Professionals"
     tagline="Take your hardware or business to the next level with the team behind MobiFlight."
-    imageSrc={heroImage}
+    imageSrc={heroImage.src}
   />
 
   <!-- Service 1: Hardware Onboarding -->

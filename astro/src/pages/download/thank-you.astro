@@ -8,11 +8,17 @@ import YoutubeVideo from "@/components/mobiflight/youtube-video.astro"
 import IconBulb from "@/components/mobiflight/icons/icon-bulb.astro"
 import Card from "@/components/starwind/card/Card.astro"
 import CardContent from "@/components/starwind/card/CardContent.astro"
+import GettingStartedImage from "@/images/download/getting-started.jpg"
+import OctocatImage from "@/images/download/octocat.png"
+import PaypalImage from "@/images/download/paypal.png"
+import ShopImage from "@/images/download/shop.jpg"
+import DiscordImage from "@/images/download/discord.jpg"
 
 const heroImage =
   "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 const installerUrl =
   "https://mobiflight.com/tl_files/download/releases/installer/1.5.0/mobiflight-setup.exe"
+
 ---
 
 <Default title="Thanks for downloading MobiFlight">
@@ -54,7 +60,7 @@ const installerUrl =
         <div class="flex flex-col gap-4">
           <div class="h-70">
             <img
-              src="/images/download/getting-started.jpg"
+              src={GettingStartedImage.src}
               alt="Documentation preview"
               class="object-cover h-full w-full"
             />
@@ -113,12 +119,12 @@ const installerUrl =
         <article class="p-6 flex flex-col gap-4">
           <div class="h-70 grid grid-cols-2 gap-4">
             <img
-              src="/images/download/octocat.png"
+              src={OctocatImage.src}
               alt="GitHub logo"
               class="object-cover h-full w-full"
             />
             <img
-              src="/images/download/paypal.png"
+              src={PaypalImage.src}
               alt="PayPal logo"
               class="object-contain h-full w-full"
             />
@@ -193,7 +199,7 @@ const installerUrl =
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="h-70">
           <img
-            src="/images/download/shop.jpg"
+            src={ShopImage.src}
             alt="Documentation preview"
             class="object-cover h-full w-full"
           />
@@ -230,7 +236,7 @@ const installerUrl =
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="h-70">
           <img
-            src="/images/download/discord.jpg"
+            src={DiscordImage.src}
             alt="Documentation preview"
             class="object-cover h-full w-full"
           />
