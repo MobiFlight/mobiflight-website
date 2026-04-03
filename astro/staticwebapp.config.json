@@ -1,10 +1,157 @@
 {
+  "trailingSlash": "auto",
   "routes": [
+    {
+      "route": "/discord",
+      "redirect": "https://discord.gg/MP37wt8sCm",
+      "statusCode": 301
+    },
+    {
+      "route": "/youtube",
+      "redirect": "https://www.youtube.com/@mobiflight",
+      "statusCode": 301
+    },
+    {
+      "route": "/hubhop",
+      "redirect": "https://hubhop.mobiflight.com",
+      "statusCode": 301
+    },
+    {
+      "route": "/minifcu",
+      "redirect": "https://shop.minicockpit.com/MOBIFLIGHT",
+      "statusCode": 301
+    },
     {
       "route": "/donate",
       "redirect": "https://discord.gg/MP37wt8sCm",
       "statusCode": 301
+    },
+    {
+      "route": "/newsletter",
+      "redirect": "https://www.mobiflight.com/en/newsletter/signup.html",
+      "statusCode": 301
+    },
+    {
+      "route": "/donate/discord",
+      "redirect": "https://www.paypal.com/donate/?hosted_button_id=GEA54MKL34BE4",
+      "statusCode": 301
+    },
+    {
+      "route": "/donate/newsletter",
+      "redirect": "https://www.paypal.com/donate/?hosted_button_id=T3B8664TBBUM2",
+      "statusCode": 301
+    },
+    {
+      "route": "/donate",
+      "redirect": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7GV3DCC7BXWLY",
+      "statusCode": 301
+    },
+    {
+      "route": "/community-products/multiplexer-breakout-board.html",
+      "redirect": "https://github.com/MobiFlight/mobiflight-pcbs/tree/main/breakout-multiplexer",
+      "statusCode": 301
+    },
+    {
+      "route": "/community-products/max7219-breakout-system.html",
+      "redirect": "https://github.com/MobiFlight/mobiflight-pcbs/tree/main/max7219-breakout-system",
+      "statusCode": 301
+    },
+    {
+      "route": "/community-products/led-driver-board.html",
+      "redirect": "https://github.com/MobiFlight/mobiflight-pcbs/tree/main/max7219-breakout-system",
+      "statusCode": 301
+    },
+    {
+      "route": "/community-products/a320-minioverhead-panel.html",
+      "redirect": "https://shop.mobiflight.com/product/a320-mini-overhead-panel-by-madmonkey",
+      "statusCode": 301
+    },
+    {
+      "route": "/input-devices/encoder-connection-kit.html",
+      "redirect": "https://shop.mobiflight.com/product/encoder-connection-kit",
+      "statusCode": 301
+    },
+    {
+      "route": "/redirects/docs/a320-minioverhead-panel.html",
+      "redirect": "https://shop.mobiflight.com/product/a320-mini-overhead-panel-by-madmonkey",
+      "statusCode": 301
+    },
+    {
+      "route": "/redirects/products/nano.html",
+      "redirect": "https://shop.mobiflight.com/product/arduino-nano-usb-c",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/docs/nano.html",
+      "redirect": "https://youtu.be/pS8KGfYRNrY?si=zjRToDyR6IvOMPO7&t=106",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/website/nano",
+      "redirect": "https://shop.mobiflight.com/product/arduino-nano-usb-c",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/website/nano.html",
+      "redirect": "https://shop.mobiflight.com/product/arduino-nano-usb-c",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/docs/mega.html",
+      "redirect": "https://youtu.be/pS8KGfYRNrY?si=zjRToDyR6IvOMPO7&t=106",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/website/mega.html",
+      "redirect": "https://shop.mobiflight.com/product/arduino-mega-2560-pro-mini-usb-c",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/docs/micro.html",
+      "redirect": "https://youtu.be/pS8KGfYRNrY?si=zjRToDyR6IvOMPO7&t=106",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/website/micro.html",
+      "redirect": "https://shop.mobiflight.com/product/arduino-pro-micro-usb-c",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/docs/uno.html",
+      "redirect": "https://youtu.be/pS8KGfYRNrY?si=zjRToDyR6IvOMPO7&t=106",
+      "statusCode": 301
+    },
+    {
+      "route": "/links/connector/info/website/uno.html",
+      "redirect": "https://shop.mobiflight.com/product/arduino-nano-usb-c",
+      "statusCode": 301
+    },
+    {
+      "route": "/newsletter/donate.html",
+      "redirect": "https://www.paypal.com/donate/?hosted_button_id=T3B8664TBBUM2",
+      "statusCode": 301
+    },
+    {
+      "route": "/shop/single-encoder-bundle",
+      "redirect": "https://shop.mobiflight.com/product/single-encoder-bundle",
+      "statusCode": 301
+    },
+    {
+      "route": "/shop/dual-encoder-bundle",
+      "redirect": "https://shop.mobiflight.com/product/dual-encoder-bundle",
+      "statusCode": 301
+    },
+    {
+      "route": "/shop/prototyping-board-v2",
+      "redirect": "https://shop.mobiflight.com/product/prototyping-board-v2",
+      "statusCode": 301
+    },
+    {
+      "route": "/shop/switch-12mm-panel-mount",
+      "redirect": "https://shop.mobiflight.com/product/switch-12mm-panel-mount",
+      "statusCode": 301
     }
+    
   ],
   "responseOverrides": {
     "404": {
