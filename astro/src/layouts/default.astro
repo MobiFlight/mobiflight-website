@@ -1,7 +1,11 @@
 ---
 // import BaseHead from '../components/BaseHead.astro';
 // import Footer from '../components/Footer.astro';
-const { title } = Astro.props
+interface Props {
+  title: string
+  class?: string
+}
+const { title, class: className } = Astro.props
 // style import
 import "@/styles/mobiflight.css"
 import Footer from "@/components/mobiflight/footer.astro"
@@ -19,9 +23,9 @@ import Navigation from "@/components/mobiflight/navigation.astro"
       type="font/woff2"
       crossorigin
     />
-    <!-- <BaseHead title={title}/> -->
+    <title>{title}</title>
   </head>
-  <body class="flex flex-col overflow-x-hidden">
+  <body class={`flex flex-col overflow-x-hidden ${className}`}>
     <Navigation />
     <article class="flex flex-col items-center w-full">
       <slot />

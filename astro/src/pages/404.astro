@@ -1,0 +1,16 @@
+---
+import Default from "@/layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import heroImage from "@/images/hero-features.jpg"
+---
+
+<Default title="MobiFlight Project" class="h-dvh bg-slate-900">
+  <Hero
+    headline="404: We flew into the wrong airport!"
+    tagline="Going around! Executing missed approach and returning to homepage."
+    ctas={[
+      { text: "Return to Home", link: "/", variant: "primary" }
+    ]}
+    imageSrc={heroImage.src}
+  />
+ </Default>
