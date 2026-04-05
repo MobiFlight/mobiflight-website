@@ -18,7 +18,21 @@ const heroImage =
   "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
 const installerUrl =
   "https://mobiflight.com/tl_files/download/releases/installer/1.5.0/mobiflight-setup.exe"
-
+const clubSignupUrl =
+  import.meta.env.PUBLIC_CLUB_SIGNUP_URL ||
+  "https://club.mobiflight.com/subscribe"
+const donatePaypalUrl = import.meta.env.PUBLIC_DONATE_PAYPAL_URL || "/donate"
+const githubSponsorUrl =
+  import.meta.env.PUBLIC_GITHUB_SPONSOR_URL ||
+  "https://github.com/sponsors/MobiFlight"
+const shopUrl = import.meta.env.PUBLIC_SHOP_URL || "https://shop.mobiflight.com"
+const docsUrl = import.meta.env.PUBLIC_DOCS_URL || "https://docs.mobiflight.com"
+const gettingStartedVideoUrl =
+  import.meta.env.PUBLIC_GETTING_STARTED_VIDEO_URL ||
+  "https://www.youtube.com/embed/pS8KGfYRNrY?si=i0Bdz6K9lbW5Ocl0"
+const youtubeChannelUrl =
+  import.meta.env.PUBLIC_YOUTUBE_CHANNEL_URL ||
+  "https://www.youtube.com/@MobiFlight/videos"
 ---
 
 <Default title="Thanks for downloading MobiFlight">
@@ -71,7 +85,7 @@ const installerUrl =
             to first working button mapping.
           </p>
           <Button
-            href="https://docs.mobiflight.com"
+            href={docsUrl}
             target="_blank"
             rel="noopener noreferrer"
             variant="outline"
@@ -82,7 +96,7 @@ const installerUrl =
         <div class="flex flex-col gap-4">
           <div class="h-70">
             <YoutubeVideo
-              src="https://www.youtube.com/embed/pS8KGfYRNrY?si=i0Bdz6K9lbW5Ocl0"
+              src={gettingStartedVideoUrl}
               title="Getting started video"
               class="h-full w-full"
             />
@@ -93,7 +107,7 @@ const installerUrl =
             from install to first flight.
           </p>
           <Button
-            href="https://www.youtube.com/@MobiFlightTeam"
+            href={youtubeChannelUrl}
             target="_blank"
             rel="noopener noreferrer"
             variant="outline"
@@ -136,7 +150,7 @@ const installerUrl =
           </p>
           <div class="flex gap-3 flex-wrap">
             <Button
-              href="https://github.com/sponsors/MobiFlight"
+              href={githubSponsorUrl}
               target="_blank"
               rel="noopener noreferrer"
               variant="outline"
@@ -144,7 +158,7 @@ const installerUrl =
               Sponsor on GitHub
             </Button>
             <Button
-              href="https://www.paypal.com"
+              href={donatePaypalUrl}
               target="_blank"
               rel="noopener noreferrer"
               variant="outline"
@@ -164,7 +178,9 @@ const installerUrl =
                 <p class="text-xl text-muted-foreground">per month</p>
               </div>
               <div class="flex justify-center">
-                <Button variant="primary" href="#">Become a member</Button>
+                <Button variant="primary" href={clubSignupUrl}
+                  >Become a member</Button
+                >
               </div>
             </CardContent>
           </Card>
@@ -174,10 +190,7 @@ const installerUrl =
             member-focused features at club.mobiflight.com.
           </p>
           <div>
-            <Button
-              href="/club"
-              variant="outline"
-            >
+            <Button href="/club" variant="outline">
               Learn about the club
             </Button>
           </div>
@@ -211,7 +224,7 @@ const installerUrl =
             the MobiFlight ecosystem.
           </p>
           <Button
-            href="https://shop.mobiflight.com"
+            href={shopUrl}
             target="_blank"
             rel="noopener noreferrer"
             variant="outline"
