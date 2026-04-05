@@ -160,6 +160,11 @@
       "route": "/en/tutorials/x-plane-quick-start-guide.html",
       "redirect": "https://github.com/MobiFlight/MobiFlight-Connector/wiki/Getting-started-with-XPlane",
       "statusCode": 301
+    },
+    {
+      "route": "/en/imprint.html",
+      "redirect": "/imprint",
+      "statusCode": 301
     }
   ],
   "responseOverrides": {
