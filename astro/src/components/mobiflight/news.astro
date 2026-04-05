@@ -14,9 +14,6 @@ import news from "@/data/news.json"
           Latest announcements, releases, and community highlights.
         </p>
       </div>
-      <a href="/news" class="text-primary font-semibold underline"
-        >Take me to the news →</a
-      >
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
       {news.map((entry) => <NewsCard {...entry} />)}
