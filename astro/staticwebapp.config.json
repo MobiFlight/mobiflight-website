@@ -145,6 +145,21 @@
       "route": "/shop/switch-12mm-panel-mount",
       "redirect": "https://shop.mobiflight.com/product/switch-12mm-panel-mount",
       "statusCode": 301
+    },
+    {
+      "route": "/en/index.html",
+      "redirect": "/",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/download.html",
+      "redirect": "/download",
+      "statusCode": 301
+    },
+    {
+      "route": "/en/tutorials/x-plane-quick-start-guide.html",
+      "redirect": "https://github.com/MobiFlight/MobiFlight-Connector/wiki/Getting-started-with-XPlane",
+      "statusCode": 301
     }
   ],
   "responseOverrides": {
