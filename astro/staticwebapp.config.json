@@ -22,8 +22,8 @@
       "statusCode": 301
     },
     {
-      "route": "/newsletter",
-      "redirect": "https://www.mobiflight.com/en/newsletter/signup.html",
+      "route": "/en/newsletter/signup.html",
+      "redirect": "/newsletter",
       "statusCode": 301
     },
     {

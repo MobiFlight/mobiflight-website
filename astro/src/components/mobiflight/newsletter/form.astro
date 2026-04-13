@@ -1,0 +1,77 @@
+---
+import Button from "@/components/starwind/button/Button.astro"
+import Input from "@/components/starwind/input/Input.astro"
+import IconMailCheck from "@/components/mobiflight/icons/icon-mail-check.astro"
+---
+
+<div
+  id="mlb2-34324196"
+  class="ml-subscribe-form rounded-xl border bg-popover p-6 shadow-lg ml-subscribe-form-34324196 flex flex-col gap-4"
+>
+  <div class="mailerlite-form flex flex-col gap-4">
+    <h2 class="text-3xl font-bold">MobiFlight Newsletter</h2>
+    <p>Sign up for news, events, and special offers!</p>
+    <form
+      class="ml-block-form"
+      action="https://assets.mailerlite.com/jsonp/1682097/forms/173133290350314671/subscribe"
+      data-code=""
+      method="post"
+      target="_blank"
+    >
+      <div class="flex flex-col md:flex-row gap-4">
+        <!-- input -->
+        <Input
+          type="email"
+          class="md:w-1/2"
+          data-inputmask=""
+          name="fields[email]"
+          placeholder="Email"
+          autocomplete="email"
+          aria-label="Email"
+        />
+        <!-- /input -->
+        <Button type="submit" variant="primary">Subscribe</Button>
+      </div>
+      <input type="hidden" name="ml-submit" value="1" />
+      <input type="hidden" name="anticsrf" value="true" />
+    </form>
+    <!-- Privacy policy -->
+    <p class="text-sm text-muted-foreground">
+      You can unsubscribe anytime. For more details, review our <span
+        ><a
+          href="https://mobiflight.com/privacy.html"
+          target="_blank"
+          rel="noopener noreferrer">Privacy Policy.</a
+        ></span
+      >
+    </p>
+    <!-- /Privacy policy -->
+  </div>
+
+  <div class="ml-form-successBody mailerlite-success flex flex-row gap-4 items-center [&>svg]:size-10 [&>svg]:text-primary" style="display: none">
+    <IconMailCheck />
+    <div class="flex flex-col gap-2">
+      <h2 class="text-3xl font-bold">You're almost done.</h2>
+      <p class="flex flex-row gap-2">
+        Check your inbox to confirm your subscription.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  function ml_webform_success_34324196() {
+    var $ = ml_jQuery || jQuery
+    $(".ml-subscribe-form-34324196 .mailerlite-success").show()
+    $(".ml-subscribe-form-34324196 .mailerlite-form").hide()
+  }
+</script>
+
+<script
+  src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"
+  type="text/javascript"></script>
+<script is:inline>
+  void fetch(
+    "https://assets.mailerlite.com/jsonp/1682097/forms/173133290350314671/takel",
+  ).catch(() => {})
+</script>

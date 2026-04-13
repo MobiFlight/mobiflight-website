@@ -10,6 +10,7 @@ const { title, class: className } = Astro.props
 import "@/styles/mobiflight.css"
 import Footer from "@/components/mobiflight/footer.astro"
 import Navigation from "@/components/mobiflight/navigation.astro"
+import NewsletterPopup from "@/components/mobiflight/newsletter/popup.astro"
 ---
 
 <html lang="en">
@@ -24,6 +25,7 @@ import Navigation from "@/components/mobiflight/navigation.astro"
       crossorigin
     />
     <title>{title}</title>
+    <NewsletterPopup />
   </head>
   <body class={`flex flex-col overflow-x-hidden ${className}`}>
     <Navigation />
