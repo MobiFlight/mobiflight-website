@@ -1,7 +1,7 @@
 ---
 import Button from "@/components/starwind/button/Button.astro"
 import Input from "@/components/starwind/input/Input.astro"
-import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.astro"
+import IconMailCheck from "@/components/mobiflight/icons/icon-mail-check.astro"
 ---
 
 <div
@@ -22,14 +22,15 @@ import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.ast
         <!-- input -->
         <Input
           type="email"
-          class="auto md:w-1/2"
+          class="md:w-1/2"
           data-inputmask=""
           name="fields[email]"
           placeholder="Email"
           autocomplete="email"
+          aria-label="Email"
         />
         <!-- /input -->
-        <Button type="submit" class="primary">Subscribe</Button>
+        <Button type="submit" variant="primary">Subscribe</Button>
       </div>
       <input type="hidden" name="ml-submit" value="1" />
       <input type="hidden" name="anticsrf" value="true" />
@@ -37,23 +38,24 @@ import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.ast
     <!-- Privacy policy -->
     <p class="text-sm text-muted-foreground">
       You can unsubscribe anytime. For more details, review our <span
-        ><a href="https://mobiflight.com/privacy.html" target="_blank"
-          >Privacy Policy.</a
+        ><a
+          href="https://mobiflight.com/privacy.html"
+          target="_blank"
+          rel="noopener noreferrer">Privacy Policy.</a
         ></span
       >
     </p>
     <!-- /Privacy policy -->
   </div>
 
-  <div
-    class="ml-form-successBody mailerlite-success flex flex-col gap-4"
-    style="display: none"
-  >
-    <h2 class="text-3xl font-bold">Thank You!</h2>
-    <p class="flex flex-row gap-2">
-      <span class="text-primary"><IconCheckCircle /></span>You have successfully
-      joined our subscriber list.
-    </p>
+  <div class="ml-form-successBody mailerlite-success flex flex-row gap-4 items-center [&>svg]:size-10 [&>svg]:text-primary" style="display: none">
+    <IconMailCheck />
+    <div class="flex flex-col gap-2">
+      <h2 class="text-3xl font-bold">You're almost done.</h2>
+      <p class="flex flex-row gap-2">
+        Check your inbox to confirm your subscription.
+      </p>
+    </div>
   </div>
 </div>
 
@@ -69,7 +71,7 @@ import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.ast
   src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"
   type="text/javascript"></script>
 <script is:inline>
-  fetch(
+  void fetch(
     "https://assets.mailerlite.com/jsonp/1682097/forms/173133290350314671/takel",
-  )
+  ).catch(() => {})
 </script>
