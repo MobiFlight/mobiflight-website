@@ -1,4 +1,8 @@
 {
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "https://mobiflight.app",
+    "Access-Control-Allow-Methods": "GET, OPTIONS"
+  },
   "trailingSlash": "auto",
   "routes": [
     {
