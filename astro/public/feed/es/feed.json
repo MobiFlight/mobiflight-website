@@ -1,0 +1,129 @@
+{
+  "community": [
+    {
+      "date": "2026-04-26",
+      "title": "MobiFlight de vuelta de AERO2026",
+      "content": [
+        "El equipo de MobiFlight ha regresado de AERO2026, donde tuvimos un tiempo increíble conectando con la comunidad de aviación.",
+        "**¡Queremos agradecer a todos** los que se acercaron a nuestro stand y compartieron su pasión por la simulación de vuelo con nosotros!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/aero/aero2026-team.jpg",
+        "alt": "Conoce al equipo de MobiFlight en AERO2026",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "tags": ["events"]
+    },
+    {
+      "date": "2026-03-22",
+      "title": "Flight Sim Award 2026",
+      "content": [
+        "MobiFlight recibió el premio de la comunidad en los Flight Sim Award 2026, reconociendo nuestras contribuciones a la comunidad de simulación de vuelo.",
+        "**¡Estamos honrados y agradecidos por este reconocimiento!**"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/fsweekend/award2026.jpg",
+        "alt": "MobiFlight recibiendo el premio de la comunidad en los Flight Sim Award 2026",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "tags": ["community"]
+    },
+    {
+      "title": "¡Encuentra al equipo de MobiFlight en FSWeekend 2026!",
+      "date": "2025-12-04",
+      "content": [
+        "¡El equipo de MobiFlight estará presente en FSWeekend 2026! Encuéntrate con nosotros, puedes ver demostraciones en vivo y obtener información exclusiva sobre las próximas funciones."
+      ],
+      "action": {
+        "title": "Más información",
+        "url": "https://flightsimweekend.com/"
+      },
+      "media": {
+        "type": "image",
+        "src": "https://mobiflight.app/feed/fsweekend-2025.jpg",
+        "alt": "¡Encuentra al equipo de MobiFlight en FSWeekend 2026!"
+      },
+      "tags": ["events"]
+    },
+    {
+      "date": "2026-02-15",
+      "title": "Talleres FSWeekend 2026",
+      "content": [
+        "**¡Ven a FSWeekend 2026** y participa en nuestros talleres prácticos junto al equipo de MobiFlight!",
+        "**¡Te lo llevas a casa!** - Monta y configura tu propio dispositivo multifunción desde cero. No hace falta experiencia previa. **¡Te esperamos!**",
+        "¡Regístrate temprano y obtén un **descuento de 10 EUR!**"
+      ],
+      "featured": false,
+      "tags": ["events"],
+      "media": {
+        "type": "image",
+        "src": "https://mobiflight.app/feed/mobiflight-workshops.jpg",
+        "alt": "¡Talleres FSWeekend 2026!",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "action": {
+        "title": "¡Regístrate!",
+        "url": "https://shop.mobiflight.com/product/mobiflight-workshop-fsweekend26"
+      }
+    },
+    {
+      "date": "2025-11-30",
+      "title": "¡Autorizado para nuevos niveles de vuelo!",
+      "content": [
+        "Este año di un gran paso: trabajo a tiempo completo en MobiFlight para que el proyecto siga avanzando.",
+        "Tu apoyo económico es clave para cubrir mis gastos y mantener el desarrollo en marcha."
+      ],
+      "featured": false,
+      "tags": ["community"],
+      "media": {
+        "type": "image",
+        "src": "https://mobiflight.app/feed/full-time.jpg",
+        "alt": "¡Autorizado para nuevos niveles de vuelo!",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "action": {
+        "title": "¡Apóyanos!",
+        "url": "https://mobiflight.com/donate"
+      }
+    },
+    {
+      "title": "Nuevos productos en la tienda de MobiFlight",
+      "date": "2025-11-30",
+      "content": [
+        "Consulta las últimas incorporaciones a nuestra tienda, incluidos nuevos módulos y accesorios para mejorar tu experiencia de simulación de vuelo."
+      ],
+      "featured": true,
+      "tags": ["shop"],
+      "media": {
+        "type": "image",
+        "src": "https://mobiflight.app/feed/shop-new-boards.jpg",
+        "alt": "¡Nuevos productos en la tienda de MobiFlight!",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "action": {
+        "title": "¡Consúltalos ahora!",
+        "url": "https://shop.mobiflight.com"
+      }
+    },
+    {
+      "title": "Suscríbete a nuestro boletín",
+      "date": "2025-11-30",
+      "content": [
+        "Mantente al día con las **últimas noticias, tutoriales y destacados de la comunidad** suscribiéndote a [nuestro boletín](https://mobiflight.com/newsletter)."
+      ],
+      "action": {
+        "title": "Suscribirse",
+        "url": "https://mobiflight.com/newsletter"
+      },
+      "media": {
+        "type": "image",
+        "src": "https://mobiflight.app/feed/newsletter-subscribe.jpg",
+        "alt": "¡Suscríbete a nuestro boletín!",
+        "className": "bg-gray-100 dark:bg-gray-100"
+      },
+      "tags": ["community"]
+    }
+  ]
+}
