@@ -1,0 +1,34 @@
+{
+  "community": [
+    {
+      "date": "2026-04-26",
+      "title": "MobiFlight back from AERO2026",
+      "content": [
+        "The MobiFlight team is back from AERO2026, where we had an amazing time connecting with the aviation community.",
+        "**We want to thank everyone** who stopped by our booth and shared their passion for flight simulation with us!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/aero/aero2026-team.jpg",
+        "alt": "Meet the MobiFlight team at AERO2026",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "tags": ["events"]
+    },
+    {
+      "date": "2026-03-22",
+      "title": "Flight Sim Awards 2026",
+      "content": [
+        "MobiFlight received the community award at the Flight Sim Awards 2026, recognizing our contributions to the flight simulation community.",
+        "**We are honored and grateful for this recognition!**"
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/fsweekend/award2026.jpg",
+        "alt": "MobiFlight receiving the community award at Flight Sim Awards 2026",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "tags": ["community"]
+    }
+  ]
+}
