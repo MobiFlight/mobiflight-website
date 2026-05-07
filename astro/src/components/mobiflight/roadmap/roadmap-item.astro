@@ -4,6 +4,7 @@ import Vote from "@/components/mobiflight/islands/vote.tsx"
 import IconThumbUp from "@/components/mobiflight/icons/icon-thumb-up.astro"
 import Badge from "@/components/starwind/badge/Badge.astro"
 interface RoadmapItem {
+  id: string
   title: string
   problem: string
   outcome: string
@@ -42,13 +43,7 @@ const { item } = Astro.props
 <div class="flex flex-row gap-2 mt-4 justify-between items-center">
   <div class="flex flex-row gap-2 items-center">
     <span class="sr-only">Votes</span>
-    <Vote votes={item.votes ?? 0} client:load/>
-    <!-- <Vote votes={item.votes ?? 0} client:load/>
-    <Badge variant="outline" class="rounded-lg pr-0 py-0">
-      <IconThumbUp />
-      {item.votes ?? 0}
-      <Button variant="default" class="rounded-l-none pl-3" size="sm"> +1 </Button>
-    </Badge> -->
+    <Vote votes={item.votes ?? 0} voteItemId={item.id} canVote={true} client:load/>
   </div>
   {
     item.issues && (

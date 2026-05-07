@@ -3,11 +3,11 @@ import Default from "../layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import heroImage from "@/images/hero-roadmap.jpg"
-import Button from "@/components/starwind/button/Button.astro"
 import RoadmapItem from "@/components/mobiflight/roadmap/roadmap-item.astro"
 
 const roadmap = [
   {
+    id: "aircraft-definition",
     title: "Define Aircraft for Project",
     problem:
       "Our preset database has more than 36,000 entries. Navigating through long lists during your configuration is time consuming and frustrating. Project setup can feel cluttered when unrelated aircraft option are shown. Users need a clearer way to focus on the aircraft they actually fly.",
@@ -22,6 +22,7 @@ const roadmap = [
     votes: 25,
   },
   {
+    id: "variable-management",
     title: "MobiFlight Variable Management",
     problem:
       "MobiFlight variables are currently not managed in a clear, central place. That makes them harder to inspect, reuse, and control across projects and profiles.",
@@ -35,6 +36,7 @@ const roadmap = [
     issues: [2635],
   },
   {
+    id: "config-wizards",
     title: "Rework Config Wizards",
     problem:
       "The current configuration wizards can feel outdated and harder to follow than they should be, especially for users who are still learning the workflow.",
@@ -48,6 +50,7 @@ const roadmap = [
     issues: [],
   },
   {
+    id: "saitek-panels",
     title: "Support Saitek Panels",
     problem:
       "Users with Saitek panels currently cannot integrate these devices with MobiFlight, which limits supported cockpit hardware options.",
@@ -61,6 +64,7 @@ const roadmap = [
     issues: [2338],
   },
   {
+    id: "controller-management-ui",
     title: "New Controller Management UI",
     problem:
       "Managing controllers should be easier, clearer, and more confidence-inspiring, especially when configuring devices, checking functionality, or updating firmware.",
@@ -74,6 +78,7 @@ const roadmap = [
     issues: [2338],
   },
   {
+    id: "remote-connection",
     title: "Remote Connection via Network",
     problem:
       "Running MobiFlight on the same machine as the simulator can limit flexibility and consume resources that some setups would rather keep free.",
