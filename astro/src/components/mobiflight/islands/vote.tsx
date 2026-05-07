@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Badge } from "./shadcn/components/ui/Badge"
 import { Button } from "./shadcn/components/ui/Button"
 import IconThumbUp from "@/components/mobiflight/islands/icons/icon-thumb-up"
 import { getAuth } from "@/lib/auth/oidc.config"
 import IconSquareRoundedCheck from "@/components/mobiflight/islands/icons/icon-square-rounded-check"
+import { loadAllVotes } from "@/lib/votes.loader"
 
 export interface VoteProps {
   votes: number
@@ -48,6 +49,25 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
       })
   }
 
+  useEffect(() => {
+    const fetchVotes = async () => {
+      const user = await getAuth().getUser()
+      if (!user || user.expired) return
+
+      loadAllVotes(user, apiBase)
+        .then((allVotes) => {
+          const record = allVotes.find((v) => v.id === voteItemId)
+          if (record === undefined) return
+          setCurrentVotes(record.votes)
+          setHasVoted(!record.canVote)
+        })
+        .catch((error) => {
+          console.error("Failed to load votes:", error)
+        })
+    }
+    fetchVotes()
+  }, [voteItemId])
+
   return (
     <div className="flex flex-row gap-2 items-center">
       <span className="sr-only">Votes</span>
@@ -57,7 +77,7 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
         className="rounded-lg pr-0 py-0 text-sm [&_svg]:size-4"
       >
         <IconThumbUp />
-        {currentVotes ?? 0}
+        <span className="min-w-4">{currentVotes ?? 0}</span>
         {!hasVoted ? (
           <Button
             variant="default"
@@ -67,11 +87,10 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
               handleVote(voteItemId)
             }}
           >
-            {" "}
-            +1{" "}
+           <span className="min-w-5">+1</span>
           </Button>
         ) : (
-          <div className="p-2.5 px-3">
+          <div className="p-2.5 px-4 flex items-center bg-foreground rounded-md rounded-l-none [&_svg]:stroke-background min-w-2.5">
             <IconSquareRoundedCheck />
           </div>
         )}
