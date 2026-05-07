@@ -1,0 +1,9 @@
+---
+import Default from "@/layouts/default.astro";
+import OidcRedirect from "@/components/mobiflight/islands/oidcRedirect";
+// src/pages/auth/callback.astro
+---
+
+<Default title="MobiFlight for Professionals — Services">
+  <OidcRedirect client:load />
+</Default>
