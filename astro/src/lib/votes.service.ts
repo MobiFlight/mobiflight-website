@@ -1,5 +1,4 @@
 import type { User } from "oidc-client-ts"
-import { useEffect, useState } from "react"
 
 // shared across all Vote instances on the page
 export type VoteRecord = {

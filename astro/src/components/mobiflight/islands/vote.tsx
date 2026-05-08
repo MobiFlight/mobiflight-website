@@ -16,7 +16,7 @@ export interface VoteProps {
 }
 
 const Vote = ({ voteCount, voteItemId, canVote }: VoteProps) => {
-  const apiBase = import.meta.env.PUBLIC_OIDC_REDIRECT_BASE_URL ?? ""
+  const apiBase = import.meta.env.PUBLIC_MOBIFLIGHT_API_BASE_URL ?? "https://api.mobiflight.com"
   const votes = useStore($votes)
   const hasVotesLeft = useStore($hasRemainingVotes)
 

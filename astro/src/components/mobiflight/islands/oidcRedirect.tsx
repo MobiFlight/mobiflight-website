@@ -25,7 +25,13 @@ export default function OidcRedirect() {
             ? state.itemId
             : null;
 
-        const next = new URL(returnTo, window.location.origin);
+        const relativeReturnTo = returnTo.startsWith("/")
+          ? returnTo
+          // if returnTo is not a relative path, default to homepage 
+          // to avoid open redirect vulnerabilities
+          : `/`;
+
+        const next = new URL(relativeReturnTo, window.location.origin);
         if (itemId) next.searchParams.set("voteItem", itemId);
 
         window.location.replace(next.toString());

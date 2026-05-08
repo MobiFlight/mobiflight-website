@@ -28,7 +28,7 @@ const { item } = Astro.props
   <p>{item.outcome}</p>
 </div>
 {
-  item.features && (
+  item.features.length > 0 && (
     <>
       <h3 class="text-xl font-bold">Key Features</h3>
       <ul class="list-disc list-inside">
@@ -46,7 +46,7 @@ const { item } = Astro.props
     <Vote voteCount={item.votes ?? 0} voteItemId={item.id} canVote={true} client:load/>
   </div>
   {
-    item.issues && (
+    item.issues.length > 0 && (
       <div class="flex flex-row gap-2 items-center">
         <h3 title="GitHub tracker"><IconGithub /></h3>
         <ul class="flex flex-row flex-wrap gap-2">
