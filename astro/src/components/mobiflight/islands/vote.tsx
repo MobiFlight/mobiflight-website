@@ -4,19 +4,25 @@ import { Button } from "./shadcn/components/ui/Button"
 import IconThumbUp from "@/components/mobiflight/islands/icons/icon-thumb-up"
 import { getAuth } from "@/lib/auth/oidc.config"
 import IconSquareRoundedCheck from "@/components/mobiflight/islands/icons/icon-square-rounded-check"
-import { loadAllVotes } from "@/lib/votes.loader"
+import { loadAllVotes, castVote, removeVote, type VoteRecord } from "@/lib/votes.service"
+import IconStop from "@/components/mobiflight/islands/icons/icon-stop"
+import { useStore } from "@nanostores/react"
+import { $votes, $hasRemainingVotes } from "@/lib/votes.store"
 
 export interface VoteProps {
-  votes: number
+  voteCount: number
   voteItemId: string
   canVote: boolean
 }
 
-const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
+const Vote = ({ voteCount, voteItemId, canVote }: VoteProps) => {
   const apiBase = import.meta.env.PUBLIC_OIDC_REDIRECT_BASE_URL ?? ""
+  const votes = useStore($votes)
+  const hasVotesLeft = useStore($hasRemainingVotes)
 
-  const [currentVotes, setCurrentVotes] = useState(votes)
-  const [hasVoted, setHasVoted] = useState(!canVote)
+  const voteRecord = votes.find((r) => r.id === voteItemId)
+  const currentVotes = voteRecord?.votes ?? voteCount
+  const hasVoted = voteRecord ? !voteRecord.userCanVote : !canVote
 
   async function handleVote(itemId: string) {
     const auth = getAuth()
@@ -29,23 +35,11 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
       return
     }
 
-    await fetch(`${apiBase}/api/votes/roadmap/${voteItemId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.id_token}`,
-      },
-      body: JSON.stringify({ itemId }),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Vote request failed with status ${res.status}`)
-        }
-        return res.json()
-      })
+    await castVote(user, apiBase, voteItemId)
       .then((data) => {
-        setCurrentVotes((prev) => prev + 1)
-        setHasVoted(true)
+        // update all votes to calculate if the user has votes left and
+        // update the current vote count for this item
+        $votes.set(data.options ?? [])
       })
   }
 
@@ -60,23 +54,11 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
       return
     }
 
-    await fetch(`${apiBase}/api/votes/roadmap/${voteItemId}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.id_token}`,
-      },
-      body: JSON.stringify({ itemId }),
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Vote request failed with status ${res.status}`)
-        }
-        return res.json()
-      })
+    await removeVote(user, apiBase, voteItemId)
       .then((data) => {
-        setCurrentVotes((prev) => prev - 1)
-        setHasVoted(false)
+        // update all votes to calculate if the user has votes left and
+        // update the current vote count for this item
+        $votes.set(data.options ?? [])
       })
   }
 
@@ -85,19 +67,11 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
       const user = await getAuth().getUser()
       if (!user || user.expired) return
 
-      loadAllVotes(user, apiBase)
-        .then((allVotes) => {
-          const record = allVotes.find((v) => v.id === voteItemId)
-          if (record === undefined) return
-          setCurrentVotes(record.votes)
-          setHasVoted(!record.canVote)
-        })
-        .catch((error) => {
-          console.error("Failed to load votes:", error)
-        })
+      if ($votes.get().length > 0) return // already loaded
+      loadAllVotes(user, apiBase).then((records) => $votes.set(records))
     }
     fetchVotes()
-  }, [voteItemId])
+  }, [])
 
   return (
     <div className="flex flex-row gap-2 items-center">
@@ -113,13 +87,22 @@ const Vote = ({ votes, voteItemId, canVote }: VoteProps) => {
           variant="default"
           size={"sm"}
           className="rounded-l-none pl-3"
+          disabled={!hasVoted && !hasVotesLeft}
           onClick={() => {
-            if (!hasVoted) handleVote(voteItemId)
+            if (!hasVoted && hasVotesLeft) handleVote(voteItemId)
             else handleRemoveVote(voteItemId)
           }}
         >
           <span className="min-w-3">
-            {!hasVoted ? "+1": <IconSquareRoundedCheck />}
+            {!hasVoted ? (
+              hasVotesLeft ? (
+                "+1"
+              ) : (
+                <IconStop />
+              )
+            ) : (
+              <IconSquareRoundedCheck />
+            )}
           </span>
         </Button>
       </Badge>

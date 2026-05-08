@@ -1,4 +1,4 @@
-const IconSquareRoundedCheck = () => {
+const IconStop = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,12 +10,12 @@ const IconSquareRoundedCheck = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-check"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-cancel"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M9 12l2 2l4 -4" />
-      <path d="M12 3c7.2 0 9 1.8 9 9c0 7.2 -1.8 9 -9 9c-7.2 0 -9 -1.8 -9 -9c0 -7.2 1.8 -9 9 -9" />
+      <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+      <path d="M18.364 5.636l-12.728 12.728" />
     </svg>
   )
 }
-export default IconSquareRoundedCheck
+export default IconStop
