@@ -42,4 +42,8 @@
   section {
     @apply border-none;
   }
+
+  p a {
+    @apply text-primary hover:underline;
+  }
 }

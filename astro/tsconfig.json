@@ -12,6 +12,9 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": ["node"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

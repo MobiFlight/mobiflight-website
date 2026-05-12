@@ -1,0 +1,140 @@
+---
+import Default from "../layouts/default.astro"
+import Hero from "@/components/mobiflight/hero.astro"
+import Container from "@/components/mobiflight/container.astro"
+import heroImage from "@/images/hero-roadmap.jpg"
+import RoadmapItem from "@/components/mobiflight/roadmap/roadmap-item.astro"
+import IconSpeakerphone from "@/components/mobiflight/icons/icon-speakerphone.astro"
+
+const roadmap = [
+  {
+    id: "aircraft-definition",
+    title: "Define Aircraft for Project",
+    problem:
+      "Our preset database has more than 36,000 entries. Navigating through long lists during your configuration is time consuming and frustrating. Project setup can feel cluttered when unrelated aircraft options are shown. Users need a clearer way to focus on the aircraft they actually fly.",
+    outcome:
+      "By defining the aircraft for a project upfront, later configuration steps can stay relevant and easier to understand. This reduces confusion, helps users get started faster, and also opens the door for smarter profile sharing and auto-loading.",
+    features: [
+      "Manage the list of aircraft that are associated with the current project in project settings",
+      "Filter preset database entries based on the aircraft defined for the project",
+      "Automatically load the correct profile based on the project's aircraft information and the detected aircraft loaded in the sim",
+    ],
+    issues: [2819],
+  },
+  {
+    id: "variable-management",
+    title: "MobiFlight Variable Management",
+    problem:
+      "MobiFlight variables are currently not managed in a clear, central place. That makes them harder to inspect, reuse, and control across projects and profiles.",
+    outcome:
+      "A dedicated variable management system will make MobiFlight variables easier to understand and work with. It also creates the foundation for features like remote control, profile management, and real-time monitoring.",
+    features: [
+      "Define MobiFlight variables in one central location",
+      "Inspect and watch MobiFlight variables directly",
+      "Control whether variables are scoped to a project or a profile",
+    ],
+    issues: [2635],
+  },
+  {
+    id: "config-wizards",
+    title: "Rework Config Wizards",
+    problem:
+      "The current configuration wizards can feel outdated and harder to follow than they should be, especially for users who are still learning the workflow.",
+    outcome:
+      "A reworked wizard experience will make configuration steps clearer, more modern, and easier to navigate. With the new UI framework, the setup flow can become more intuitive and responsive.",
+    features: [
+      "A more user-friendly step-by-step wizard flow",
+      "A cleaner and more modern interface",
+      "A more responsive foundation for future improvements",
+    ],
+    issues: [],
+  },
+  {
+    id: "saitek-panels",
+    title: "Support Saitek Panels",
+    problem:
+      "Users with Saitek panels currently cannot integrate these devices with MobiFlight, which limits supported cockpit hardware options.",
+    outcome:
+      "Adding support for Saitek panels will make it easier for more cockpit builders to keep using their existing hardware within the MobiFlight ecosystem.",
+    features: [
+      "Support for the Saitek Switch Panel",
+      "Support for the Saitek Multi Panel",
+      "Support for the Saitek Radio Panel",
+    ],
+    issues: [2338],
+  },
+  {
+    id: "controller-management-ui",
+    title: "New Controller Management UI",
+    problem:
+      "Managing controllers should be easier, clearer, and more confidence-inspiring, especially when configuring devices, checking functionality, or updating firmware.",
+    outcome:
+      "A redesigned controller management experience will make connected devices easier to understand and maintain. It should reduce friction during setup and make essential controller tasks much more straightforward.",
+    features: [
+      "A new look and feel for controller management dialogs",
+      "Built-in testing and verification for connected controllers",
+      "A guided firmware installation and update process",
+    ],
+    issues: [2338],
+  },
+  {
+    id: "remote-connection",
+    title: "Remote Connection via Network",
+    problem:
+      "Running MobiFlight on the same machine as the simulator can limit flexibility and consume resources that some setups would rather keep free.",
+    outcome:
+      "Network-based simulator connections will allow MobiFlight to run on a separate machine, making more advanced or distributed setups easier to build and manage.",
+    features: [
+      "Network connection settings for MSFS and X-Plane",
+      "Connection status and diagnostics directly in the UI",
+    ],
+    issues: [2915],
+  },
+]
+---
+
+<Default title="MobiFlight Roadmap">
+  <Hero
+    headline="MobiFlight Roadmap"
+    tagline="Learn about our plans for the future of MobiFlight and how you can contribute to the project."
+    imageSrc={heroImage.src}
+  />
+
+  <Container class="mt-8">
+    <h2 class="text-2xl font-bold mb-4 flex flex-row items-center gap-2">
+      <IconSpeakerphone /> Get a voice, get involved
+    </h2>
+    <p>
+      <a href="/club">MobiFlight Club members</a> get early access to roadmap updates,
+      a direct line for feedback, and the opportunity to help shape the future of
+      MobiFlight. Join the club to have your say in what we build next!
+    </p>
+  </Container>
+
+  <div class="w-full bg-muted my-8 py-4">
+    <Container class="flex flex-col gap-4">
+      <h2 class="text-xl">
+        MobiFlight is a community-driven project, and we want to share our plans
+        and priorities.
+      </h2>
+      <p>
+        This roadmap outlines the key features and improvements we are working
+        on, as well as some of our longer-term goals. We also welcome feedback
+        and contributions from the community, so if you have ideas or want to
+        get involved, please join us on our forums or Discord or directly via
+        GitHub!
+      </p>
+    </Container>
+  </div>
+
+  <Container>
+    <h2 class="text-4xl font-bold">Roadmap 2026 - Summer / Fall</h2>
+  </Container>
+  {
+    roadmap.map((item) => (
+      <Container class="flex flex-col gap-2 mb-8 rounded-xl border p-5 bg-muted/20 mt-8">
+        <RoadmapItem item={item} />
+      </Container>
+    ))
+  }
+</Default>

@@ -1,0 +1,71 @@
+---
+import Button from "@/components/starwind/button/Button.astro"
+import Vote from "@/components/mobiflight/islands/vote.tsx"
+import IconGithub from "@/components/mobiflight/icons/icon-github.astro"
+
+interface RoadmapItem {
+  id: string
+  title: string
+  problem: string
+  outcome: string
+  features: string[]
+  issues: number[]
+  votes?: number
+}
+
+interface Props {
+  item: RoadmapItem
+}
+
+const { item } = Astro.props
+---
+
+<h2 class="text-3xl font-bold mb-2">{item.title}</h2>
+<h2 class="text-xl font-semibold">The problem</h2>
+<p>{item.problem}</p>
+<h2 class="text-xl font-semibold">The solution</h2>
+<div class="flex-1 flex flex-col gap-2">
+  <p>{item.outcome}</p>
+</div>
+{
+  item.features.length > 0 && (
+    <>
+      <h3 class="text-xl font-bold">Key Features</h3>
+      <ul class="list-disc list-inside">
+        {item.features.map((feature) => (
+          <li>{feature}</li>
+        ))}
+      </ul>
+    </>
+  )
+}
+
+<div class="flex flex-row gap-2 mt-4 justify-between items-center">
+  <div class="flex flex-row gap-2 items-center">
+    <span class="sr-only">Votes</span>
+    <Vote voteCount={item.votes ?? 0} voteItemId={item.id} client:load/>
+  </div>
+  {
+    item.issues.length > 0 && (
+      <div class="flex flex-row gap-2 items-center">
+        <h3 title="GitHub tracker"><IconGithub /></h3>
+        <ul class="flex flex-row flex-wrap gap-2">
+          {item.issues.map((issue) => (
+            <li>
+              <Button
+                variant="outline"
+                class="rounded-full h-6"
+                size="sm"
+                href={`https://github.com/MobiFlight/MobiFlight-Connector/issues/${issue}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                #{issue}
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</div>

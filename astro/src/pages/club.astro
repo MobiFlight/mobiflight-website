@@ -11,8 +11,11 @@ import IconSparkles from "@/components/mobiflight/icons/icon-sparkles.astro"
 import heroImage from "@/images/hero-club.jpg"
 import MemberJoinBox from "@/components/mobiflight/member/join-box.astro"
 
-const clubSignupUrl = import.meta.env.PUBLIC_CLUB_SIGNUP_URL || "https://club.mobiflight.com/subscribe"
-const clubLoginUrl = import.meta.env.PUBLIC_CLUB_LOGIN_URL || "https://club.mobiflight.com"
+const clubSignupUrl =
+  import.meta.env.PUBLIC_CLUB_SIGNUP_URL ||
+  "https://club.mobiflight.com/subscribe"
+const clubLoginUrl =
+  import.meta.env.PUBLIC_CLUB_LOGIN_URL || "https://club.mobiflight.com"
 
 const benefits = [
   {
@@ -26,6 +29,7 @@ const benefits = [
     iconClass: "text-primary",
     title: "Get a voice",
     description: "Help us prioritize features and improvements.",
+    link: "/roadmap",
   },
   {
     icon: IconMilitaryAward,
@@ -89,17 +93,30 @@ const benefits = [
       <h2 class="text-3xl font-bold mb-6">Member Benefits</h2>
       <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
-          benefits.map((b) => (
-            <li class="flex gap-4 p-4 border rounded-lg items-center">
-              <span class={`text-3xl ${b.iconClass} [&_svg]:size-10`}>
-                {<b.icon class="w-10 h-10" />}
-              </span>
-              <div>
-                <h3 class="font-semibold text-lg">{b.title}</h3>
-                <p class="text-muted-foreground">{b.description}</p>
-              </div>
-            </li>
-          ))
+          benefits.map((b) => {
+            const Wrapper = b.link ? "a" : "div"
+            return (
+              <li>
+                <Wrapper
+                  href={b.link}
+                  class:list={[
+                  "flex gap-4 p-4 border rounded-lg items-center",
+                  b.link
+                    ? "hover:bg-muted/50 cursor-pointer transition-colors"
+                    : "",
+                ]}
+                >
+                  <span class={`text-3xl ${b.iconClass} [&_svg]:size-10`}>
+                    {<b.icon class="w-10 h-10" />}
+                  </span>
+                  <div>
+                    <h3 class="font-semibold text-lg">{b.title}</h3>
+                    <p class="text-muted-foreground">{b.description}</p>
+                  </div>
+                </Wrapper>
+              </li>
+            )
+          })
         }
       </ul>
     </section>
@@ -108,4 +125,5 @@ const benefits = [
   <!-- Member sign up -->
   <Container class="mb-16">
     <MemberJoinBox />
+  </Container>
 </Default>
