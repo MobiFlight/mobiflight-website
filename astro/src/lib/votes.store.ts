@@ -8,7 +8,7 @@ export const $votes = atom<VoteRecord[]>([])
 
 // derived: how many items the user has already voted on
 export const $votesUsed = computed($votes, (records) =>
-  records.filter((r) => !r.userCanVote).length
+  records.filter((r) => r.userHasVoted === true).length
 )
 
 export const $hasRemainingVotes = computed($votesUsed, (used) => used < MAX_VOTES)
