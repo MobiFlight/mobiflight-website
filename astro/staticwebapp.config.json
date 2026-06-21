@@ -169,6 +169,11 @@
       "route": "/en/imprint.html",
       "redirect": "/imprint",
       "statusCode": 301
+    },
+    {
+      "route": "/en/tutorials/community-guides/expression-syntax-guide.html",
+      "redirect": "https://docs.mobiflight.com/features/modifiers/transform/",
+      "statusCode": 301
     }
   ],
   "responseOverrides": {
