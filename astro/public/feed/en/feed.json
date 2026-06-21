@@ -1,6 +1,44 @@
 {
   "community": [
     {
+      "date": "2026-06-21",
+      "title": "WingFlex DAP500 pre-order",
+      "content": [
+        "[Our friends from WingFlex](https://www.wingflex.com/products/dap-500?sca_ref=11453765.OPCgaGgkUj) have released their latest controller!",
+        "The DAP500 is an **authentic recreation of the Garmin GFC500** which is probably the most popular autopilot for General Aviation in recent years."
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/260621/wingflex-dap500.jpg",
+        "alt": "WingFlex DAP500 controller",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Pre-order now!",
+        "url": "https://www.wingflex.com/products/dap-500?sca_ref=11453765.OPCgaGgkUj"
+      }
+    },
+    {
+      "date": "2026-06-21",
+      "title": "Exclusive offers for partner products",
+      "content": [
+        "Checkout our newly created shop section for partner products.",
+        "MobiFlight users receive **exclusive discounts** and every purchase supports our community."
+      ],
+      "media": {
+        "type": "image",
+        "src": "/media/260621/partner-products.jpg",
+        "alt": "Exclusive offers for partner products",
+        "className": "bg-foreground dark:bg-background"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Take a look!",
+        "url": "https://shop.mobiflight.com/partner-products"
+      }
+    },
+    {
       "date": "2026-04-26",
       "title": "MobiFlight back from AERO2026",
       "content": [
