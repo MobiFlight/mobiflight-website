@@ -2,7 +2,7 @@
   "community": [
     {
       "date": "2026-06-21",
-      "title": "WingFlex DAP500 pre-order",
+      "title": "WingFlex DAP500 released!",
       "content": [
         "[Our friends from WingFlex](https://www.wingflex.com/products/dap-500?sca_ref=11453765.OPCgaGgkUj) have released their latest controller!",
         "The DAP500 is an **authentic recreation of the Garmin GFC500** which is probably the most popular autopilot for General Aviation in recent years."
@@ -13,9 +13,9 @@
         "alt": "WingFlex DAP500 controller",
         "className": "bg-foreground dark:bg-background"
       },
-      "tags": ["community"],
+      "tags": ["shop"],
       "action": {
-        "title": "Pre-order now!",
+        "title": "Early-Bird USD139 - order now!",
         "url": "https://www.wingflex.com/products/dap-500?sca_ref=11453765.OPCgaGgkUj"
       }
     },
