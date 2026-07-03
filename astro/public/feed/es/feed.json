@@ -2,25 +2,6 @@
   "community": [
     {
       "date": "2026-06-21",
-      "title": "WingFlex DAP500 pre-venta",
-      "content": [
-        "[Nuestros amigos de WingFlex](https://www.wingflex.com/products/dap-500?sca_ref=11453765.OPCgaGgkUj) han lanzado su último controlador!",
-        "El DAP500 es una **recreación auténtica del Garmin GFC500**, el piloto automático más popular para la Aviación General en los últimos años."
-      ],
-      "media": {
-        "type": "image",
-        "src": "/media/260621/wingflex-dap500.jpg",
-        "alt": "Controlador WingFlex DAP500",
-        "className": "bg-foreground dark:bg-background"
-      },
-      "tags": ["shop"],
-      "action": {
-        "title": "Early-Bird USD139 - ordena ahora!",
-        "url": "https://www.wingflex.com/products/dap-500?sca_ref=11453765.OPCgaGgkUj"
-      }
-    },
-    {
-      "date": "2026-06-21",
       "title": "Nueva sección: productos de nuestros socios",
       "content": [
         "Consulta nuestra nueva sección de tienda para productos de nuestros socios.",
