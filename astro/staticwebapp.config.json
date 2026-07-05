@@ -172,7 +172,7 @@
     },
     {
       "route": "/en/tutorials/community-guides/expression-syntax-guide.html",
-      "redirect": "https://docs.mobiflight.com/features/modifiers/transform/",
+      "redirect": "https://docs.mobiflight.com/guides/modifying-values-with-ncalc/",
       "statusCode": 301
     }
   ],
