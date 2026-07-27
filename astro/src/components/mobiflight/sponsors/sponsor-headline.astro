@@ -22,13 +22,8 @@ const tiers = {
 } as Record<number, { title: string; class: string }>
 ---
 
-{
-  (
-    <div class={`w-full text-center font-semibold border-2 p-4 first:mt-0 mt-8 mb-4 ${sponsor.amount !== 0 ? tiers[sponsor.amount].class : ""}`}>
-      {sponsor.amount === 0
-        ? "Community Sponsors"
-        : `${tiers[sponsor.amount].title}`}
-    </div>
-  )
-}
-
+<div
+  class={`w-full text-center font-semibold border-2 p-4 first:mt-0 mt-8 mb-4 ${sponsor.amount !== 0 ? tiers[sponsor.amount].class : ""}`}
+>
+  {`${tiers[sponsor.amount].title}`}
+</div>
