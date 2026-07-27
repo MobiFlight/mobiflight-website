@@ -23,7 +23,7 @@ const tiers = {
 ---
 
 <div
-  class={`w-full text-center font-semibold border-2 p-4 first:mt-0 mt-8 mb-4 ${sponsor.amount !== 0 ? tiers[sponsor.amount].class : ""}`}
+  class={`w-full text-center font-semibold border-b-2 p-4 first:mt-0 mt-8 mb-4 ${sponsor.amount !== 0 ? tiers[sponsor.amount].class : ""}`}
 >
   {`${tiers[sponsor.amount].title}`}
 </div>
