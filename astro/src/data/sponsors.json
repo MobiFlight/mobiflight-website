@@ -89,5 +89,12 @@
     "href": "https://www.loungepilot.com/?ref=mobiflight&utm_source=mobiflight",
     "amount": 100,
     "sizeClass": "h-28"
+  },
+  {
+    "name": "MOZA",
+    "logo": "/sponsors/moza-logo-black.png",
+    "href": "https://mozaracing.com/mobiflight",
+    "amount": 200,
+    "sizeClass": "h-28"
   }
 ]

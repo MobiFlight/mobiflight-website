@@ -1,8 +1,10 @@
 ---
 import Container from "@/components/mobiflight/container.astro"
 import sponsorData from "@/data/sponsors.json"
+import SponsorLogo from "@/components/mobiflight/sponsors/sponsor-logo.astro"
+import SponsorHeadline from "@/components/mobiflight/sponsors/sponsor-headline.astro"
 
-type Sponsor = {
+export type Sponsor = {
   name: string
   logo: string
   href: string | null
@@ -14,6 +16,8 @@ const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
   if (b.amount !== a.amount) return b.amount - a.amount
   return a.name.localeCompare(b.name)
 })
+
+let lastAmount: number | null = null
 ---
 
 <!-- Sponsor Wall -->
@@ -28,37 +32,20 @@ const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
     </div>
     <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
       {
-        sponsors.map((sponsor) =>
-          sponsor.href ? (
-            <a
-              href={sponsor.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`Visit the ${sponsor.name} website`}
-              class="inline-flex items-center justify-center"
-            >
-              <img
-                src={sponsor.logo}
-                alt={`${sponsor.name} logo`}
-                class:list={[
-                  "w-auto max-w-full object-contain hover:grayscale-0 transition-all",
-                  sponsor.sizeClass,
-                ]}
-              />
-            </a>
-          ) : (
-            <div class="inline-flex items-center justify-center">
-              <img
-                src={sponsor.logo}
-                alt={`${sponsor.name} logo`}
-                class:list={[
-                  "w-auto max-w-full object-contain",
-                  sponsor.sizeClass,
-                ]}
-              />
-            </div>
-          ),
-        )
+        sponsors.map((sponsor) => {
+          const isNewTier = lastAmount !== sponsor.amount
+          if (isNewTier) {
+            lastAmount = sponsor.amount
+          }
+          return sponsor.amount !== 0 && (
+            <>
+              {isNewTier && (
+                <SponsorHeadline sponsor={sponsor} />
+              )}
+              <SponsorLogo sponsor={sponsor} />
+            </>
+          )
+        })
       }
     </div>
     <a
