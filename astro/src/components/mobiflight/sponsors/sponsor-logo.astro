@@ -1,0 +1,37 @@
+---
+import type { Sponsor } from "@/components/mobiflight/sponsors.astro"
+export type Props = {
+  sponsor: Sponsor
+}
+
+const { sponsor } = Astro.props
+---
+
+{
+  sponsor.href ? (
+    <a
+      href={sponsor.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`Visit the ${sponsor.name} website`}
+      class="inline-flex items-center justify-center"
+    >
+      <img
+        src={sponsor.logo}
+        alt={`${sponsor.name} logo`}
+        class:list={[
+          "w-auto max-w-full object-contain hover:grayscale-0 transition-all",
+          sponsor.sizeClass,
+        ]}
+      />
+    </a>
+  ) : (
+    <div class="inline-flex items-center justify-center">
+      <img
+        src={sponsor.logo}
+        alt={`${sponsor.name} logo`}
+        class:list={["w-auto max-w-full object-contain", sponsor.sizeClass]}
+      />
+    </div>
+  )
+}

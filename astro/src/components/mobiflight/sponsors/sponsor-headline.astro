@@ -1,0 +1,29 @@
+---
+import type { Sponsor } from "@/components/mobiflight/sponsors.astro"
+export type Props = {
+  sponsor: Sponsor
+}
+
+const { sponsor } = Astro.props
+
+const tiers = {
+  200: {
+    title: "Gold sponsors",
+    class: "text-2xl text-amber-500 border-amber-500",
+  },
+  100: {
+    title: "Silver sponsors",
+    class: "text-xl text-gray-500 border-gray-400 mt-16",
+  },
+  50: {
+    title: "Bronze sponsors",
+    class: "text-lg text-amber-700 border-amber-700",
+  },
+} as Record<number, { title: string; class: string }>
+---
+
+<div
+  class={`w-full text-center font-semibold border-2 p-4 first:mt-0 mt-8 mb-4 ${sponsor.amount !== 0 ? tiers[sponsor.amount].class : ""}`}
+>
+  {`${tiers[sponsor.amount].title}`}
+</div>
