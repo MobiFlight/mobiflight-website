@@ -1,6 +1,42 @@
 {
   "community": [
     {
+      "date": "2026-07-29",
+      "title": "Release review video disponible!",
+      "content": [
+        "Hemos alcanzado un hito importante: ¡MobiFlight versión 11.2 ha sido lanzado!",
+        "¡Mira nuestro video que muestra las nuevas funciones y mejoras!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/releases/release-11.2-thumbnail.jpg",
+        "alt": "MobiFlight 11.2 lanzado"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "¡Míralo ahora!",
+        "url": "https://youtu.be/Shl_8uxvVoE"
+      }
+    },
+    {
+      "date": "2026-07-26",
+      "title": "MOZA es nuestro nuevo socio de MobiFlight",
+      "content": [
+        "MobiFlight se complace en anunciar nuestra nueva asociación con MOZA.",
+        "Queremos agradecer a MOZA por su apoyo y esperamos una colaboración exitosa."
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/moza-newsletter.jpg",
+        "alt": "¡MOZA es nuestro nuevo socio!"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Ver productos",
+        "url": "http://mozaracing.com/collections/flight-series?ref=qkxijpvj"
+      }
+    },
+    {
       "date": "2026-06-21",
       "title": "Nueva sección: productos de nuestros socios",
       "content": [
