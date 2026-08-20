@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mobiflight>
   <item version="11.2.0.3">
-    <title>MobiFlight Connector 11.2 released!</title>
+    <title>MobiFlight Connector 11.2.0.3 (BETA) released!</title>
     <version>11.2.0.3</version>
     <url>https://github.com/MobiFlight/MobiFlight-Connector/releases/download/11.2.0.3/MobiFlightConnector-11.2.0.3.zip</url>
     <changelog>https://www.mobiflight.com/en/download.html#Release_Notes</changelog>
