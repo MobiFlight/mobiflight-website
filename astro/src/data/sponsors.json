@@ -96,5 +96,12 @@
     "href": "https://mozaracing.com/mobiflight",
     "amount": 200,
     "sizeClass": "h-28"
+  },
+  {
+    "name": "AvGeek Hangar",
+    "logo": "/sponsors/avgeek-logo.png",
+    "href": "https://avgeekhangar.com/?ref=mobiflight",
+    "amount": 50,
+    "sizeClass": "h-32"
   }
 ]
