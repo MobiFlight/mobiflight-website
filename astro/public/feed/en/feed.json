@@ -1,6 +1,24 @@
 {
   "community": [
     {
+      "date": "2026-08-28",
+      "title": "✈️ Bristol, Here We Come!",
+      "content": [
+        "MobiFlight is excited about going to FSimUK Flight Simulation Show in the UK.",
+        "A huge thank you to our sponsor, AvGeekHangar, for making this trip possible!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/fsimuk/bristol-airspace-center.jpg",
+        "alt": "Bristol Airspace Center"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Follow us!",
+        "url": "https://discord.com/channels/608690978081210392/1542839055262421013"
+      }
+    },
+    {
       "date": "2026-07-29",
       "title": "Release review video available!",
       "content": [
