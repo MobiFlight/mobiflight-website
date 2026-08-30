@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <mobiflight>
-  <item version="11.2.0.5">
-    <title>MobiFlight Connector 11.2.0.5 (BETA) released!</title>
-    <version>11.2.0.5</version>
-    <url>https://github.com/MobiFlight/MobiFlight-Connector/releases/download/11.2.0.5/MobiFlightConnector-11.2.0.5.zip</url>
+  <item version="11.2.0.6">
+    <title>MobiFlight Connector 11.2.0.6 (BETA) released!</title>
+    <version>11.2.0.6</version>
+    <url>https://github.com/MobiFlight/MobiFlight-Connector/releases/download/11.2.0.6/MobiFlightConnector-11.2.0.6.zip</url>
     <changelog>https://www.mobiflight.com/en/download.html#Release_Notes</changelog>
-    <checksum algorithm="SHA1">ED7E777ECA975CFCC487354BDABD82FDE9515E0C</checksum>
+    <checksum algorithm="SHA1">C853313947805ABEACA46900F98564C7A6125755</checksum>
     <beta>yes</beta>
   </item>
   <item version="11.2.0.0">
