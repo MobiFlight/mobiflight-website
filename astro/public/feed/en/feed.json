@@ -1,6 +1,24 @@
 {
   "community": [
     {
+      "date": "2026-09-05",
+      "title": "MobiFlight 11.2 Input Modifier Tutorial",
+      "content": [
+        "MobiFlight 11.2 brings new Input Modifier features to help you fine-tune your setup.",
+        "In this tutorial, we show you how Input Modifiers work, including the Interpolation Modifier, and how to use them in your flight simulator configuration."
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/youtube/input-modifiers.jpg",
+        "alt": "Thumbnail for the MF 11.2 input modifier tutorial"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Watch it now!",
+        "url": "https://youtu.be/GJN9UuN1BZQ"
+      }
+    },
+    {
       "date": "2026-08-28",
       "title": "✈️ Bristol, Here We Come!",
       "content": [
