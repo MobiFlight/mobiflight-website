@@ -1,6 +1,24 @@
 {
   "community": [
     {
+      "date": "2026-09-18",
+      "title": "Recap: MobiFlight Meetup 2026",
+      "content": [
+        "MobiFlight Meetup 2026 brought us together for a weekend full of cockpit projects, hardware, electronics, flying, food, and plenty of time to share ideas and experiences.",
+        "Watch the video and get a summary of the exciting moments from the meetup."
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/youtube/mobiflight-meetup-2026.jpg",
+        "alt": "Thumbnail for the MobiFlight Meetup 2026 recap video"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Watch it now!",
+        "url": "https://youtu.be/SQ5tvD7tPhA"
+      }
+    },
+    {
       "date": "2026-09-05",
       "title": "MobiFlight 11.2 Input Modifier Tutorial",
       "content": [
