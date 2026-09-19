@@ -1,7 +1,8 @@
 ---
 import Container from "@/components/mobiflight/container.astro"
-import NewsCard from "@/components/mobiflight/news-card.astro"
-import news from "@/data/news.json"
+import NewsCard from "@/components/mobiflight/news/news-card.astro"
+import news from "@/../public/feed/en/feed.json" 
+import type { NewsItem } from "@/components/mobiflight/news/news-card.astro"
 ---
 
 <!-- News & Updates -->
@@ -15,8 +16,8 @@ import news from "@/data/news.json"
         </p>
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {news.map((entry) => <NewsCard {...entry} />)}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {news.community.map((entry: NewsItem) => <NewsCard item={entry} baseUrl="/feed/" />)}
     </div>
   </section>
 </Container>
