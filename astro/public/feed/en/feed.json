@@ -99,7 +99,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/260621/partner-products.jpg",
+        "src": "media/260621/partner-products.jpg",
         "alt": "Exclusive offers for partner products",
         "className": "bg-foreground dark:bg-background"
       },
@@ -118,7 +118,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/aero/aero2026-team.jpg",
+        "src": "media/aero/aero2026-team.jpg",
         "alt": "Meet the MobiFlight team at AERO2026",
         "className": "bg-foreground dark:bg-background"
       },
@@ -133,7 +133,7 @@
       ],
       "media": {
         "type": "image",
-        "src": "/media/fsweekend/award2026.jpg",
+        "src": "media/fsweekend/award2026.jpg",
         "alt": "MobiFlight receiving the community award at Flight Sim Awards 2026",
         "className": "bg-foreground dark:bg-background"
       },
