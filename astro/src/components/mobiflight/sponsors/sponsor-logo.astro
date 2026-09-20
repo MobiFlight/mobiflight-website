@@ -14,13 +14,13 @@ const { sponsor } = Astro.props
       target="_blank"
       rel="noopener noreferrer"
       title={`Visit the ${sponsor.name} website`}
-      class="inline-flex items-center justify-center"
+      class="inline-flex items-center justify-center bg-transparent"
     >
       <img
         src={sponsor.logo}
         alt={`${sponsor.name} logo`}
         class:list={[
-          "w-auto max-w-full object-contain hover:grayscale-0 transition-all",
+          "w-auto max-w-full object-contain hover:grayscale-0 transition-all hover:scale-105 hover:drop-shadow-xl/25",
           sponsor.sizeClass,
         ]}
       />

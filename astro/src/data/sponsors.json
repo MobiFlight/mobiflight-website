@@ -103,5 +103,12 @@
     "href": "https://avgeekhangar.com/?ref=mobiflight",
     "amount": 50,
     "sizeClass": "h-32"
+  },
+  {
+    "name": "Honeycomb Aeronautical",
+    "logo": "/sponsors/honeycomb-aeronautical-logo.png",
+    "href": "https://flyhoneycomb.com/?ref=MOBIFLIGHT",
+    "amount": 200,
+    "sizeClass": "h-28"
   }
 ]
