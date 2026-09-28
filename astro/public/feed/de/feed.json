@@ -1,6 +1,24 @@
 {
   "community": [
     {
+      "date": "2026-09-28",
+      "title": "MobiFlight jetzt noch SCHNELLER!",
+      "content": [
+        "Wir haben gerade v11.3 veröffentlicht - unsere bisher schnellste Version! 🚀",
+        "Erhalte eine Zusammenfassung aller Highlights unserer neuesten Version von MobiFlight."
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/releases/release-11.3-thumbnail.jpg",
+        "alt": "Thumbnail für das MobiFlight Release-Review-Video"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Jetzt ansehen!",
+        "url": "https://youtu.be/664qhQBdIqU"
+      }
+    },
+    {
       "date": "2026-09-18",
       "title": "Recap: MobiFlight Meetup 2026",
       "content": [
