@@ -81,7 +81,7 @@
     "logo": "/sponsors/octavi-logo-small.png",
     "href": "https://octavi.net/?ref=mobiflight",
     "amount": 100,
-    "sizeClass": "h-30"
+    "sizeClass": "h-34"
   },
   {
     "name": "LoungePilot",
@@ -102,7 +102,7 @@
     "logo": "/sponsors/avgeek-logo.png",
     "href": "https://avgeekhangar.com/?ref=mobiflight",
     "amount": 50,
-    "sizeClass": "h-32"
+    "sizeClass": "h-26"
   },
   {
     "name": "Honeycomb Aeronautical",
