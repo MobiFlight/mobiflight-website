@@ -2,86 +2,296 @@
 import Default from "../layouts/default.astro"
 import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
+import Button from "@/components/starwind/button/Button.astro"
+import IconMailCheck from "@/components/mobiflight/icons/icon-mail-check.astro"
+import IconTool from "@/components/mobiflight/icons/icon-tool.astro"
+import IconChalkboardTeacher from "@/components/mobiflight/icons/icon-chalkboard-teacher.astro"
+import IconPlaneTilt from "@/components/mobiflight/icons/icon-plane-tilt.astro"
+import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.astro"
+import IconHeartDollar from "@/components/mobiflight/icons/icon-heart-dollar.astro"
 import heroImage from "@/images/hero-services.jpg"
+
+const supportFeatures = [
+  "Priority bug reporting and issue escalation",
+  "Dedicated support channel on Discord or Slack",
+  "Fast response times — we push hard to get back to you quickly",
+  "Monthly check-in calls with the MobiFlight team",
+  "Early briefing to upcoming firmware updates and pre-releases",
+]
+
+const trainingFeatures = [
+  "MobiFlight architecture and ecosystem overview",
+  "Device definition deep-dive and hands-on authoring",
+  "Firmware integration workshop",
+  "Hands-on lab session with your specific hardware",
+  "Session recording and follow-up Q&A",
+]
+
+const devFeatures = [
+  "Device definition and configuration files",
+  "Firmware integration, testing, and validation",
+  "Custom plugin or connector development",
+  "Full project lifecycle: spec → build → ship",
+  "Handoff documentation and optional ongoing support",
+]
 ---
 
 <Default title="MobiFlight for Professionals — Services">
   <Hero
     headline="MobiFlight for Professionals"
-    tagline="Take your hardware or business to the next level with the team behind MobiFlight."
+    tagline="Expert support, training, and custom development for hardware vendors and cockpit builders."
     imageSrc={heroImage.src}
+    ctas={[
+      { icon: IconMailCheck, text: "Get in Touch", link: "mailto:info@mobiflight.com", variant: "primary" },
+    ]}
   />
 
-  <!-- Service 1: Hardware Onboarding -->
-  <Container>
-    <section class="py-8">
-      <h2 class="text-3xl font-bold mb-2">Get Your Hardware MobiFlight-Ready</h2>
-      <p class="text-muted-foreground mb-4">For existing hardware vendors &amp; flight sim panel manufacturers</p>
-      <p class="mb-6">
-        Your customers are already asking for MobiFlight compatibility. We help you get there. We analyze your
-        hardware's interface, develop the MobiFlight device definition, test firmware integration, and publish
-        your device to the MobiFlight ecosystem — so your customers can plug in and fly.
-      </p>
-      <a href="mailto:info@mobiflight.com" class="text-primary underline font-semibold">
-        Let's talk about your hardware &rarr;
-      </a>
-    </section>
-  </Container>
+  <!-- Overview cards -->
+  <div class="w-full bg-muted/40 border-b">
+    <Container>
+      <section class="py-16">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Everything You Need to Build with MobiFlight</h2>
+          <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            From expert support to hands-on training and custom development — we provide the complete toolkit
+            for your flight sim hardware success.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Support card -->
+          <a
+            href="#support"
+            class="group flex flex-col items-center text-center bg-background rounded-2xl shadow-sm border hover:shadow-lg transition-shadow p-8"
+          >
+            <span class="[&>svg]:w-24 [&>svg]:h-24 text-sky-500 mb-6 shrink-0">
+              <IconTool />
+            </span>
+            <h3 class="text-xl font-bold mb-3">Support Services</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+              Dedicated technical support for hardware vendors integrating MobiFlight. Fast responses,
+              priority escalation, and direct access to the team.
+            </p>
+            <span class="text-primary font-semibold text-sm group-hover:underline">Learn More &rarr;</span>
+          </a>
 
-  <!-- Service 2: Build Controllers -->
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-2">Bring Your Controller Concept to Life</h2>
-      <p class="text-muted-foreground mb-4">For startups and entrepreneurs developing new flight sim hardware</p>
-      <p class="mb-6">
-        From button mapping to encoder logic to display output — MobiFlight provides the software foundation so
-        you can focus on hardware design. We consult on architecture, help integrate MobiFlight support from day
-        one, and support you through development and launch.
-      </p>
-      <a href="mailto:info@mobiflight.com" class="text-primary underline font-semibold">
-        Start building with us &rarr;
-      </a>
-    </section>
-  </Container>
+          <!-- Training card -->
+          <a
+            href="#training"
+            class="group flex flex-col items-center text-center bg-background rounded-2xl shadow-sm border hover:shadow-lg transition-shadow p-8"
+          >
+            <span class="[&>svg]:w-24 [&>svg]:h-24 text-teal-500 mb-6 shrink-0">
+              <IconChalkboardTeacher />
+            </span>
+            <h3 class="text-xl font-bold mb-3">Training</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+              Structured, hands-on sessions for your engineering team — from MobiFlight fundamentals to
+              advanced firmware integration and custom module development.
+            </p>
+            <span class="text-primary font-semibold text-sm group-hover:underline">Learn More &rarr;</span>
+          </a>
 
-  <!-- Service 3: Consulting & Support -->
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-2">Expert Help for Your Cockpit Build</h2>
-      <p class="text-muted-foreground mb-4">For sim enthusiasts and prosumer cockpit builders</p>
-      <p class="mb-6">
-        Whether you're building a full A320 home cockpit or wiring up your first overhead panel, our consulting
-        service connects you directly with MobiFlight expertise. We help you plan your setup, solve configuration
-        challenges, and get everything running smoothly.
-      </p>
-      <a href="mailto:info@mobiflight.com" class="text-primary underline font-semibold">
-        Book a consultation &rarr;
-      </a>
-    </section>
-  </Container>
+          <!-- Custom dev card -->
+          <a
+            href="#custom-development"
+            class="group flex flex-col items-center text-center bg-background rounded-2xl shadow-sm border hover:shadow-lg transition-shadow p-8"
+          >
+            <span class="[&>svg]:w-24 [&>svg]:h-24 text-emerald-500 mb-6 shrink-0">
+              <IconPlaneTilt />
+            </span>
+            <h3 class="text-xl font-bold mb-3">Custom Development</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
+              We build it for you — device definitions, firmware integration, and custom plugins, so
+              your product ships MobiFlight-ready out of the box.
+            </p>
+            <span class="text-primary font-semibold text-sm group-hover:underline">Learn More &rarr;</span>
+          </a>
+        </div>
+      </section>
+    </Container>
+  </div>
 
-  <!-- Service 4: Sponsoring -->
-  <Container>
-    <section class="py-8 border-t">
-      <h2 class="text-3xl font-bold mb-2">Sponsor MobiFlight</h2>
-      <p class="text-muted-foreground mb-4">For companies and individuals who benefit from the platform</p>
-      <p class="mb-4">
-        MobiFlight is free and open source — and stays that way because of sponsors. GitHub Sponsors is the
-        primary way businesses and power users invest in the project's future. Premium sponsors receive logo
-        placement, early access to features, and recognition across the MobiFlight community.
-      </p>
-      <ul class="list-disc pl-6 mb-6 flex flex-col gap-1">
-        <li>Individual sponsor</li>
-        <li>Business / Premium sponsor (logo on website + in-app)</li>
-      </ul>
-      <a
-        href="https://github.com/sponsors/MobiFlight"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-primary underline font-semibold"
-      >
-        Become a Sponsor on GitHub &rarr;
-      </a>
-    </section>
-  </Container>
+  <!-- Support Services -->
+  <div id="support" class="w-full scroll-mt-8 border-t">
+    <Container>
+      <section class="py-16">
+        <div class="flex flex-col md:flex-row md:items-start gap-12">
+          <!-- Icon + text -->
+          <div class="flex-1 flex flex-col sm:flex-row gap-8">
+            <span class="[&>svg]:w-24 [&>svg]:h-24 text-sky-500 shrink-0 self-start">
+              <IconTool />
+            </span>
+            <div class="flex-1">
+              <h2 class="text-3xl font-bold mb-4">Support Services</h2>
+              <p class="text-lg text-muted-foreground mb-6">
+                Dedicated technical support for companies building MobiFlight-compatible hardware. We respond
+                fast, help you debug integration issues, and keep your product running smoothly as MobiFlight
+                evolves.
+              </p>
+              <ul class="flex flex-col gap-3 mb-8">
+                {
+                  supportFeatures.map((f) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary mt-0.5 shrink-0">
+                        <IconCheckCircle />
+                      </span>
+                      <span>{f}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+              <Button variant="primary" href="mailto:info@mobiflight.com?subject=Support+Plan+Inquiry">
+                Get a Support Plan &rarr;
+              </Button>
+            </div>
+          </div>
+          <div class="hidden md:block w-px bg-border self-stretch"></div>
+          <aside class="md:w-72 shrink-0">
+            <div class="rounded-xl border bg-muted/30 p-6">
+              <p class="text-base font-semibold uppercase tracking-wide text-muted-foreground mb-4">
+                Good fit if you…
+              </p>
+              <ul class="flex flex-col gap-3 text-base text-muted-foreground">
+                <li>Ship hardware that uses MobiFlight</li>
+                <li>Need reliable answers when things break</li>
+                <li>Want early visibility into upcoming changes</li>
+                <li>Are onboarding a new device definition</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </Container>
+  </div>
+
+  <!-- Training -->
+  <div id="training" class="w-full scroll-mt-8 bg-muted/30 border-t">
+    <Container>
+      <section class="py-16">
+        <div class="flex flex-col md:flex-row md:items-start gap-12">
+          <!-- Icon + text -->
+          <div class="flex-1 flex flex-col sm:flex-row gap-8">
+            <span class="[&>svg]:w-24 [&>svg]:h-24 text-teal-500 shrink-0 self-start">
+              <IconChalkboardTeacher />
+            </span>
+            <div class="flex-1">
+              <h2 class="text-3xl font-bold mb-4">Training</h2>
+              <p class="text-lg text-muted-foreground mb-6">
+                Structured, hands-on sessions for your engineers — from MobiFlight architecture basics to
+                custom module development. Available remote or on-site, tailored to your team's level and
+                hardware.
+              </p>
+              <ul class="flex flex-col gap-3 mb-8">
+                {
+                  trainingFeatures.map((f) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary mt-0.5 shrink-0">
+                        <IconCheckCircle />
+                      </span>
+                      <span>{f}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+              <Button variant="primary" href="mailto:info@mobiflight.com?subject=Training+Inquiry">
+                Book a Training Session &rarr;
+              </Button>
+            </div>
+          </div>
+          <div class="hidden md:block w-px bg-border self-stretch"></div>
+          <aside class="md:w-72 shrink-0">
+            <div class="rounded-xl border bg-background p-6">
+              <p class="text-base font-semibold uppercase tracking-wide text-muted-foreground mb-4">
+                Good fit if you…
+              </p>
+              <ul class="flex flex-col gap-3 text-base text-muted-foreground">
+                <li>Are new to MobiFlight firmware integration</li>
+                <li>Have a team that needs to get up to speed quickly</li>
+                <li>Want structured knowledge transfer, not just docs</li>
+                <li>Are preparing to launch a MobiFlight-compatible product</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </Container>
+  </div>
+
+  <!-- Custom Development -->
+  <div id="custom-development" class="w-full scroll-mt-8 border-t">
+    <Container>
+      <section class="py-16">
+        <div class="flex flex-col md:flex-row md:items-start gap-12">
+          <!-- Icon + text -->
+          <div class="flex-1 flex flex-col sm:flex-row gap-8">
+            <span class="[&>svg]:w-24 [&>svg]:h-24 text-emerald-500 shrink-0 self-start">
+              <IconPlaneTilt />
+            </span>
+            <div class="flex-1">
+              <h2 class="text-3xl font-bold mb-4">Custom Development</h2>
+              <p class="text-lg text-muted-foreground mb-6">
+                We build it for you. From device definition files to firmware integration to custom plugins —
+                full-stack MobiFlight development so your product ships ready to fly, out of the box.
+              </p>
+              <ul class="flex flex-col gap-3 mb-8">
+                {
+                  devFeatures.map((f) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-primary mt-0.5 shrink-0">
+                        <IconCheckCircle />
+                      </span>
+                      <span>{f}</span>
+                    </li>
+                  ))
+                }
+              </ul>
+              <Button variant="primary" href="mailto:info@mobiflight.com?subject=Custom+Development+Inquiry">
+                Start Your Project &rarr;
+              </Button>
+            </div>
+          </div>
+          <div class="hidden md:block w-px bg-border self-stretch"></div>
+          <aside class="md:w-72 shrink-0">
+            <div class="rounded-xl border bg-muted/30 p-6">
+              <p class="text-base font-semibold uppercase tracking-wide text-muted-foreground mb-4">
+                Good fit if you…
+              </p>
+              <ul class="flex flex-col gap-3 text-base text-muted-foreground">
+                <li>Are launching a new flight sim controller or panel</li>
+                <li>Want MobiFlight support built in from day one</li>
+                <li>Don't have in-house MobiFlight expertise yet</li>
+                <li>Need hands-on help with integration, not just advice</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </Container>
+  </div>
+
+  <!-- Sponsoring -->
+  <div class="w-full bg-primary/10 border-t border-primary/20">
+    <Container>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-6 py-10">
+        <span class="[&>svg]:w-24 [&>svg]:h-24 text-red-600 shrink-0 self-start">
+          <IconHeartDollar />
+        </span>
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-4">Sponsor MobiFlight</h2>
+          <p class="text-muted-foreground text-xl">
+            MobiFlight is free and open source — and stays that way because of sponsors. Individual and
+            business tiers are available; premium sponsors get logo placement on the website and in-app.
+          </p>
+        </div>
+        <Button
+          variant="primary"
+          href="https://github.com/sponsors/MobiFlight"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shrink-0"
+        >
+          Become a Sponsor &rarr;
+        </Button>
+      </div>
+    </Container>
+  </div>
 </Default>
