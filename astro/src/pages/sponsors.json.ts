@@ -22,7 +22,7 @@ export const GET: APIRoute = async () => {
         href: sponsor.href,
     }))
     return new Response(
-        JSON.stringify({sponsors}),
+        JSON.stringify(sponsors),
         {
             headers: {
                 'Content-Type': 'application/json; Charset=UTF-8',
