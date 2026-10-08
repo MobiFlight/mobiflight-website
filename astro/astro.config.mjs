@@ -12,6 +12,10 @@ export default defineConfig({
     watch: {
       usePolling: true,
     },
+
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
   },
 	},
 

@@ -6,6 +6,12 @@
   "trailingSlash": "auto",
   "routes": [
     {
+      "route": "/sponsors.json",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      }
+    },
+    {
       "route": "/discord",
       "redirect": "https://discord.gg/MP37wt8sCm",
       "statusCode": 301
