@@ -45,8 +45,8 @@
     "name": "FliteSim",
     "logo": "/sponsors/flitesim-logo.png",
     "href": "https://flitesim.com/?ref=mobiflight",
-    "amount": 200,
-    "sizeClass": "h-36"
+    "amount": 25,
+    "sizeClass": "h-16"
   },
   {
     "name": "Propwash Simulation",
@@ -59,8 +59,8 @@
     "name": "Rowsfire",
     "logo": "/sponsors/rowsfire-logo-small.png",
     "href": "https://rowsfire.com/?ref=qkxijpvj&utm_source=mobiflight",
-    "amount": 50,
-    "sizeClass": "h-16"
+    "amount": 100,
+    "sizeClass": "h-20"
   },
   {
     "name": "WingFlex",
