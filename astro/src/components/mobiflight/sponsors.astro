@@ -12,10 +12,15 @@ export type Sponsor = {
   sizeClass: string
 }
 
-const sponsors = (sponsorData as Sponsor[]).toSorted((a, b) => {
-  if (b.amount !== a.amount) return b.amount - a.amount
-  return a.name.localeCompare(b.name)
-})
+const SPONSOR_AMOUNT_MIN =50
+
+const sponsors = (sponsorData as Sponsor[])
+  .filter((sponsor) => sponsor.amount >= SPONSOR_AMOUNT_MIN)
+  .toSorted((a, b) => {
+    if (b.amount !== a.amount) return b.amount - a.amount
+    return a.name.localeCompare(b.name)
+  }
+)
 
 let lastAmount: number | null = null
 ---
@@ -37,7 +42,7 @@ let lastAmount: number | null = null
           if (isNewTier) {
             lastAmount = sponsor.amount
           }
-          return sponsor.amount >= 50 && (
+          return (
             <>
               {isNewTier && (
                 <SponsorHeadline sponsor={sponsor} />
