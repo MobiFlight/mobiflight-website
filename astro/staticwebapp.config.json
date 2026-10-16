@@ -13,6 +13,12 @@
       }
     },
     {
+      "route": "/sponsors/*",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
       "route": "/discord",
       "redirect": "https://discord.gg/MP37wt8sCm",
       "statusCode": 301
