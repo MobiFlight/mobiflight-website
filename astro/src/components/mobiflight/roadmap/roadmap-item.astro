@@ -2,25 +2,44 @@
 import Button from "@/components/starwind/button/Button.astro"
 import Vote from "@/components/mobiflight/islands/vote.tsx"
 import IconGithub from "@/components/mobiflight/icons/icon-github.astro"
+import Badge from "@/components/starwind/badge"
+import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.astro"
 
-interface RoadmapItem {
+export type RoadmapItemStatus = "started" | "completed"
+export type RoadmapItemFeature = {
+  description: string
+  status?: RoadmapItemStatus
+}
+
+export interface RoadmapItem {
   id: string
   title: string
   problem: string
   outcome: string
-  features: string[]
+  features: RoadmapItemFeature[]
   issues: number[]
   votes?: number
+  status?: RoadmapItemStatus
 }
 
 interface Props {
   item: RoadmapItem
 }
 
+const statusVariants = {
+  "started": "bg-sky-600 text-white",
+  "completed": "bg-emerald-600 text-white"
+} as Record<RoadmapItemStatus, string>
+
 const { item } = Astro.props
 ---
 
-<h2 class="text-3xl font-bold mb-2">{item.title}</h2>
+<div class="flex-row flex justify-between items-center mb-2">
+  <h2 class="text-3xl font-bold">
+    {item.title}
+  </h2>
+  {item.status && <Badge class={statusVariants[item.status]}>{item.status}</Badge>}
+</div>
 <h2 class="text-xl font-semibold">The problem</h2>
 <p>{item.problem}</p>
 <h2 class="text-xl font-semibold">The solution</h2>
@@ -33,7 +52,16 @@ const { item } = Astro.props
       <h3 class="text-xl font-bold">Key Features</h3>
       <ul class="list-disc list-inside">
         {item.features.map((feature) => (
-          <li>{feature}</li>
+          <li>
+            <span class="inline-flex items-center gap-2">
+              {feature.description}{" "}
+              {feature.status == "completed" && (
+                <span class={statusVariants[feature.status]}>
+                  <IconCheckCircle />
+                </span>
+              )}
+            </span>
+          </li>
         ))}
       </ul>
     </>
@@ -43,12 +71,14 @@ const { item } = Astro.props
 <div class="flex flex-row gap-2 mt-4 justify-between items-center">
   <div class="flex flex-row gap-2 items-center">
     <span class="sr-only">Votes</span>
-    <Vote voteCount={item.votes ?? 0} voteItemId={item.id} client:load/>
+    <Vote voteCount={item.votes ?? 0} voteItemId={item.id} client:load />
   </div>
   {
     item.issues.length > 0 && (
       <div class="flex flex-row gap-2 items-center">
-        <h3 title="GitHub tracker"><IconGithub /></h3>
+        <h3 title="GitHub tracker">
+          <IconGithub />
+        </h3>
         <ul class="flex flex-row flex-wrap gap-2">
           {item.issues.map((issue) => (
             <li>

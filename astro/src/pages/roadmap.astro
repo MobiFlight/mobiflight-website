@@ -4,93 +4,11 @@ import Hero from "@/components/mobiflight/hero.astro"
 import Container from "@/components/mobiflight/container.astro"
 import heroImage from "@/images/hero-roadmap.jpg"
 import RoadmapItem from "@/components/mobiflight/roadmap/roadmap-item.astro"
+import type { RoadmapItem as RoadmapItemData } from "@/components/mobiflight/roadmap/roadmap-item.astro"
 import IconSpeakerphone from "@/components/mobiflight/icons/icon-speakerphone.astro"
+import roadmapData from "@/data/roadmap.json"
 
-const roadmap = [
-  {
-    id: "aircraft-definition",
-    title: "Define Aircraft for Project",
-    problem:
-      "Our preset database has more than 36,000 entries. Navigating through long lists during your configuration is time consuming and frustrating. Project setup can feel cluttered when unrelated aircraft options are shown. Users need a clearer way to focus on the aircraft they actually fly.",
-    outcome:
-      "By defining the aircraft for a project upfront, later configuration steps can stay relevant and easier to understand. This reduces confusion, helps users get started faster, and also opens the door for smarter profile sharing and auto-loading.",
-    features: [
-      "Manage the list of aircraft that are associated with the current project in project settings",
-      "Filter preset database entries based on the aircraft defined for the project",
-      "Automatically load the correct profile based on the project's aircraft information and the detected aircraft loaded in the sim",
-    ],
-    issues: [2819],
-  },
-  {
-    id: "variable-management",
-    title: "MobiFlight Variable Management",
-    problem:
-      "MobiFlight variables are currently not managed in a user-friendly, central place. That makes them harder to inspect, debug, reuse, and share across projects and profiles (tabs).",
-    outcome:
-      "A dedicated variable management system with quick access and intuitive controls will make MobiFlight variables easier to understand and work with.",
-    features: [
-      "Define MobiFlight variables in one central location",
-      "Inspect and watch MobiFlight variables directly",
-      "Control whether variables are scoped to the project or a profile",
-    ],
-    issues: [2635],
-  },
-  {
-    id: "config-wizards",
-    title: "Rework Config Wizards",
-    problem:
-      "The current configuration wizards are still based on the old UI framework. They feel outdated and harder to follow than they should be, especially for users who are still learning the workflow.",
-    outcome:
-      "A reworked wizard experience will make configuration steps clearer, more modern, and easier to navigate. With the new UI framework, the setup flow can become more intuitive and responsive.",
-    features: [
-      "A more user-friendly step-by-step wizard flow",
-      "A cleaner and more modern interface",
-      "A more responsive foundation for future improvements",
-    ],
-    issues: [],
-  },
-  {
-    id: "saitek-panels",
-    title: "Support Saitek Panels",
-    problem:
-      "Users with Saitek panels currently cannot use these devices with MobiFlight because they are non-standard USB HID controllers.",
-    outcome:
-      "Adding support for Saitek panels will make it easier for more cockpit builders to keep using their existing hardware within the MobiFlight ecosystem.",
-    features: [
-      "Support for the Saitek Switch Panel",
-      "Support for the Saitek Multi Panel",
-      "Support for the Saitek Radio Panel",
-    ],
-    issues: [2338],
-  },
-  {
-    id: "controller-management-ui",
-    title: "New Controller Management UI",
-    problem:
-      "Current controller management has flaws and is complex, especially for new users. The process should be clearer, simpler and more intuitive, especially when onboarding controllers, configuring devices, or updating firmware.",
-    outcome:
-      "A redesigned controller management experience will make using and configuring controllers straight-forward. It should reduce friction during initial setup and make essential controller configurartion tasks much more straightforward.",
-    features: [
-      "A new look and feel for controller management dialogs",
-      "Built-in testing and verification for connected controllers",
-      "A guided firmware installation and update process"
-    ],
-    issues: [2338],
-  },
-  {
-    id: "remote-connection",
-    title: "Remote Connection via Network",
-    problem:
-      "Running MobiFlight on the same machine as the simulator is consuming resources that should be exclusively available for the sim.",
-    outcome:
-      "Network-based simulator connections will allow MobiFlight to run on a separate machine, making more advanced or distributed setups easier to build and manage.",
-    features: [
-      "Network connection settings for MSFS and X-Plane",
-      "Connection status and diagnostics directly in the UI",
-    ],
-    issues: [2915],
-  },
-]
+const roadmap = roadmapData as RoadmapItemData[]
 ---
 
 <Default title="MobiFlight Roadmap">
