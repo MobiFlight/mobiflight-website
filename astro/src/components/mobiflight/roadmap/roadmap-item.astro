@@ -4,6 +4,8 @@ import Vote from "@/components/mobiflight/islands/vote.tsx"
 import IconGithub from "@/components/mobiflight/icons/icon-github.astro"
 import Badge from "@/components/starwind/badge"
 import IconCheckCircle from "@/components/mobiflight/icons/icon-check-circle.astro"
+import IconPercentage30 from "@/components/mobiflight/icons/icon-percentage-30.astro"
+import IconCircleDashed from "@/components/mobiflight/icons/icon-circle-dashed.astro"
 
 export type RoadmapItemStatus = "started" | "completed"
 export type RoadmapItemFeature = {
@@ -26,9 +28,14 @@ interface Props {
   item: RoadmapItem
 }
 
-const statusVariants = {
+const badgeStatusVariants = {
   "started": "bg-sky-600 text-white",
   "completed": "bg-emerald-600 text-white"
+} as Record<RoadmapItemStatus, string>
+
+const iconStatusVariants = {
+  "started": "text-sky-600",
+  "completed": "text-emerald-600"
 } as Record<RoadmapItemStatus, string>
 
 const { item } = Astro.props
@@ -38,7 +45,7 @@ const { item } = Astro.props
   <h2 class="text-3xl font-bold">
     {item.title}
   </h2>
-  {item.status && <Badge class={statusVariants[item.status]}>{item.status}</Badge>}
+  {item.status && <Badge class={badgeStatusVariants[item.status]}>{item.status}</Badge>}
 </div>
 <h2 class="text-xl font-semibold">The problem</h2>
 <p>{item.problem}</p>
@@ -56,8 +63,18 @@ const { item } = Astro.props
             <span class="inline-flex items-center gap-2">
               {feature.description}{" "}
               {feature.status == "completed" && (
-                <span class={statusVariants[feature.status]}>
+                <span title="Completed" class={iconStatusVariants[feature.status]}>
                   <IconCheckCircle />
+                </span>
+              )}
+              {feature.status == "started" && (
+                <span title="Started" class={iconStatusVariants[feature.status]}>
+                  <IconPercentage30 /> 
+                </span>
+              )}
+              {item.status == "started" && feature.status == undefined && (
+                <span title="Not started">
+                  <IconCircleDashed /> 
                 </span>
               )}
             </span>

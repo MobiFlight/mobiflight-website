@@ -48,11 +48,11 @@
         "description": "A cleaner and more modern interface",
         "status": "completed"
       },
-      { "description": "A more responsive foundation for future improvements" },
+      { "description": "A more responsive foundation for future improvements", "status": "completed" },
       { "description": "Input Config Wizards", "status": "completed" },
       { "description": "Output Config Wizards", "status": "started" }
     ],
-    "issues": [],
+    "issues": [ 1747 ],
     "status": "started"
   },
   {
@@ -88,7 +88,7 @@
       },
       { "description": "A guided firmware installation and update process" }
     ],
-    "issues": [2338]
+    "issues": [1694]
   },
   {
     "id": "remote-connection",
