@@ -1,6 +1,42 @@
 {
   "community": [
     {
+      "date": "2026-11-10",
+      "title": "10% Off Sitewide!",
+      "content": [
+        "Our friends from WingFlex have some exciting deals to offer!",
+        "WingFlex has 10% off sitewide including free shipping worldwide!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/261111/wingflex-blackfriday.jpg",
+        "alt": "Thumbnail for the WingFlex 10% off deal"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Save now!",
+        "url": "https://www.wingflex.com/?sca_ref=11453765.OPCgaGgkUj"
+      }
+    },
+    {
+      "date": "2026-11-11",
+      "title": "Save up to 18%!",
+      "content": [
+        "Rowsfire is launching their Black Friday and Cyber Monday deals!",
+        "Check out what our silver sponsor Rowsfire has to offer!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/261111/rowsfire-blackfriday.jpg",
+        "alt": "Thumbnail for the Rowsfire Black Friday deal"
+      },
+      "tags": ["community"],
+      "action": {
+        "title": "Shop now!",
+        "url": "https://rowsfire.com/?ref=qkxijpvj"
+      }
+    },
+    {
       "date": "2026-09-28",
       "title": "MobiFlight just got FASTER!",
       "content": [
