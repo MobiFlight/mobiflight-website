@@ -1,5 +1,6 @@
 ---
 layout: "@/layouts/default-md.astro"
+title: "MobiFlight - Impressum"
 ---
 
 # Impressum

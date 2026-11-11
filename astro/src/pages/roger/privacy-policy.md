@@ -1,5 +1,6 @@
 ---
 layout: "@/layouts/default-md.astro"
+title: "Roger, the MobiFlight Assistant - Privacy Policy"
 ---
 # Privacy Policy – Roger, the MobiFlight Assistant
 
