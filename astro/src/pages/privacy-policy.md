@@ -1,5 +1,6 @@
 ---
 layout: "@/layouts/default-md.astro"
+title: "MobiFlight - Privacy Policy"
 ---
 # Privacy Policy
 

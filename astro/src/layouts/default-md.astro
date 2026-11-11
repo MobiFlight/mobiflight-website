@@ -1,7 +1,8 @@
 ---
 // import BaseHead from '../components/BaseHead.astro';
 // import Footer from '../components/Footer.astro';
-const { title } = Astro.props
+// Markdown layouts receive the page's frontmatter as a prop
+const { frontmatter } = Astro.props
 // style import
 import "@/styles/mobiflight.css"
 import Footer from "@/components/mobiflight/footer.astro"
@@ -20,7 +21,7 @@ import Container from "@/components/mobiflight/container.astro"
       type="font/woff2"
       crossorigin
     />
-    <!-- <BaseHead title={title}/> -->
+    <title>{frontmatter.title ?? "MobiFlight"}</title>
   </head>
   <body class="flex flex-col overflow-x-hidden">
     <Navigation />
