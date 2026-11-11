@@ -1,0 +1,24 @@
+---
+interface Props {
+  link?: string
+  target?: string
+  class?: string
+  rel?: string
+  id?: string
+}
+const { link, target, class: className, rel, id } = Astro.props
+---
+
+{link ? (
+  <a
+    href={link}
+    target={target}
+    id={id}
+    rel={rel}
+    class={className}
+  >
+    <slot />
+  </a>
+) : (
+  <slot />
+)}

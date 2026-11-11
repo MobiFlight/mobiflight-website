@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/starwind/card"
 import { Button } from "@/components/starwind/button"
+import LinkWrap from "@/components/mobiflight/link-wrap.astro"
 
 export interface NewsItem {
   date: string
@@ -38,7 +39,11 @@ const { item, baseUrl } = Astro.props
     <CardTitle class="text-lg">{item.title}</CardTitle>
   </CardHeader>
   <CardContent class="flex flex-col gap-4">
-    {item.media && <img class="w-full object-cover h-80" src={`${baseUrl ?? ""}${item.media.src}`} alt={item.media.alt} />}
+    { item.media && (
+      <LinkWrap link={item.action?.url}>
+        <img class="w-full object-cover h-80" src={`${baseUrl ?? ""}${item.media.src}`} alt={item.media.alt} />
+      </LinkWrap>
+    )}
     <CardDescription class="flex flex-col gap-2 min-h-32">
       {item.content.map((line) => <p>{line}</p>)}
     </CardDescription>
