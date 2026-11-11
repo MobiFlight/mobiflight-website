@@ -90,8 +90,8 @@ const Vote = ({ voteCount, voteItemId }: VoteProps) => {
             className="rounded-l-none pl-3"
             disabled={!hasVoted && !hasVotesLeft}
             onClick={() => {
-              if (!hasVoted || hasVotesLeft) handleVote(voteItemId)
-              else handleRemoveVote(voteItemId)
+              if (hasVoted) handleRemoveVote(voteItemId)
+              else handleVote(voteItemId)
             }}
           >
             <span className="min-w-3">
