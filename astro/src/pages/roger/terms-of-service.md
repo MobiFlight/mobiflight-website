@@ -1,5 +1,6 @@
 ---
 layout: "@/layouts/default-md.astro"
+title: "Roger, the MobiFlight Assistant - Terms of Service"
 ---
 # Terms of Service – Roger, the MobiFlight Assistant
 
