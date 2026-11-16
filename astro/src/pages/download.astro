@@ -23,7 +23,8 @@ const heroImage =
     <section class="py-8">
       <h2 class="text-3xl font-bold mb-2">Latest Release</h2>
       <p class="text-muted-foreground mb-4">
-        Version <strong>v11.3.1</strong> &mdash; Released October 7th, 2026
+        Version <strong data-latest-release-version>v11.3.1</strong> &mdash;
+        Released <span data-latest-release-date>October 6th, 2026</span>
       </p>
       <div class="flex flex-wrap gap-4">
         <Button
@@ -118,3 +119,20 @@ const heroImage =
     </section>
   </Container>
 </Default>
+
+<script>
+  import { fetchLatestRelease } from "@/lib/latest-release"
+
+  // Replace the version and date above with the latest stable release on
+  // GitHub. If GitHub can't be reached, the values rendered at build time stay.
+  fetchLatestRelease()
+    .then((release) => {
+      if (!release) return
+
+      const version = document.querySelector("[data-latest-release-version]")
+      const releaseDate = document.querySelector("[data-latest-release-date]")
+      if (version) version.textContent = release.version
+      if (releaseDate) releaseDate.textContent = release.releaseDate
+    })
+    .catch((error) => console.warn(error))
+</script>
