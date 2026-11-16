@@ -3,9 +3,27 @@
 // import Footer from '../components/Footer.astro';
 interface Props {
   title: string
+  // shown in search results and link previews (Discord, Facebook, X, ...)
+  description?: string
+  // preview image for shared links, a URL or a path relative to the site
+  image?: string
   class?: string
 }
-const { title, class: className } = Astro.props
+
+const defaultDescription =
+  "MobiFlight is free, open-source software that connects Arduino and Raspberry Pi Pico boards to your flight simulator to build your own home cockpit."
+const defaultImage =
+  "https://shop.mobiflight.com/wp-content/uploads/2026/02/homepage-mcp.jpg"
+
+const {
+  title,
+  description = defaultDescription,
+  image = defaultImage,
+  class: className,
+} = Astro.props
+
+// link previews need an absolute image URL
+const imageUrl = new URL(image, Astro.site)
 // style import
 import "@/styles/mobiflight.css"
 import Footer from "@/components/mobiflight/footer.astro"
@@ -25,6 +43,13 @@ import NewsletterPopup from "@/components/mobiflight/newsletter/popup.astro"
       crossorigin
     />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MobiFlight" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
     <NewsletterPopup />
   </head>
   <body class={`flex flex-col overflow-x-hidden ${className}`}>
