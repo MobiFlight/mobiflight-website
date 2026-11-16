@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import type { User } from "oidc-client-ts"
 import { Badge } from "./shadcn/components/ui/Badge"
 import { Button } from "./shadcn/components/ui/Button"
 import IconThumbUp from "@/components/mobiflight/islands/icons/icon-thumb-up"
@@ -10,6 +11,20 @@ import { useStore } from "@nanostores/react"
 import { $votes, $hasRemainingVotes } from "@/lib/votes.store"
 import ClubLogo from "@/components/mobiflight/islands/club-logo"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/mobiflight/islands/shadcn/components/ui/Dialog"
+
+// set by the OIDC callback when the user signed in to cast a vote
+const PENDING_VOTE_PARAM = "voteItem"
+
+// removes the pending vote from the URL so that it is only handled once,
+// e.g. not again when the page is reloaded
+function takePendingVote(itemId: string) {
+  const url = new URL(window.location.href)
+  if (url.searchParams.get(PENDING_VOTE_PARAM) !== itemId) return false
+
+  url.searchParams.delete(PENDING_VOTE_PARAM)
+  window.history.replaceState(window.history.state, "", url)
+  return true
+}
 
 export interface VoteProps {
   voteCount: number
@@ -28,6 +43,7 @@ const Vote = ({ voteCount, voteItemId }: VoteProps) => {
   const hasVoted = voteRecord?.userHasVoted ?? false
 
   const [dialogOpen, setDialogOpen] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   async function handleVote(itemId: string) {
     const auth = getAuth()
@@ -63,19 +79,37 @@ const Vote = ({ voteCount, voteItemId }: VoteProps) => {
     })
   }
 
+  // the user signed in to vote on this item, cast the vote unless it
+  // already counts or no votes are left
+  async function handlePendingVote(user: User | null) {
+    containerRef.current?.scrollIntoView({ block: "center" })
+
+    if (!user || user.expired) return
+
+    const record = $votes.get().find((r) => r.id === voteItemId)
+    if (record?.userHasVoted || !$hasRemainingVotes.get()) return
+
+    await castVote(user, apiBase, voteItemId).then((data) => {
+      $votes.set(data.options ?? [])
+    })
+  }
+
   useEffect(() => {
     const fetchVotes = async () => {
       const user = await getAuth().getUser()
 
-      if ($votes.get().length > 0) return // already loaded
-      loadAllVotes(user!, apiBase).then((records) => $votes.set(records))
+      if ($votes.get().length === 0) {
+        $votes.set(await loadAllVotes(user!, apiBase))
+      }
+
+      if (takePendingVote(voteItemId)) await handlePendingVote(user)
     }
     fetchVotes()
   }, [])
 
   return (
     <>
-      <div className="flex flex-row gap-2 items-center">
+      <div ref={containerRef} className="flex flex-row gap-2 items-center">
         <span className="sr-only">Votes</span>
         <Badge
           variant="outline"
