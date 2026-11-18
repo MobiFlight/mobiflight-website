@@ -27,13 +27,16 @@ const imageUrl = new URL(image, Astro.site)
 // style import
 import "@/styles/mobiflight.css"
 import Footer from "@/components/mobiflight/footer.astro"
-import Navigation from "@/components/mobiflight/navigation.astro"
+import GoogleTag from "@/components/mobiflight/consent/google-tag.astro"
+import CookieConsent from "@/components/mobiflight/consent/cookie-consent.astro"
 import NewsletterPopup from "@/components/mobiflight/newsletter/popup.astro"
+import Navigation from "@/components/mobiflight/navigation.astro"
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <GoogleTag />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="preload"
@@ -59,5 +62,6 @@ import NewsletterPopup from "@/components/mobiflight/newsletter/popup.astro"
       <!-- your content is injected here -->
     </article>
     <Footer />
+    <CookieConsent />
   </body>
 </html>

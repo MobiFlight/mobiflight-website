@@ -6,6 +6,8 @@ const { frontmatter } = Astro.props
 // style import
 import "@/styles/mobiflight.css"
 import Footer from "@/components/mobiflight/footer.astro"
+import GoogleTag from "@/components/mobiflight/consent/google-tag.astro"
+import CookieConsent from "@/components/mobiflight/consent/cookie-consent.astro"
 import Navigation from "@/components/mobiflight/navigation.astro"
 import Container from "@/components/mobiflight/container.astro"
 ---
@@ -13,6 +15,7 @@ import Container from "@/components/mobiflight/container.astro"
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <GoogleTag />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="preload"
@@ -34,5 +37,6 @@ import Container from "@/components/mobiflight/container.astro"
       <!-- your content is injected here -->
     </article>
     <Footer />
+    <CookieConsent />
   </body>
 </html>

@@ -1,9 +1,31 @@
-<!-- MailerLite Universal -->
-<script is:inline>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '1682097');
+<!-- MailerLite Universal (newsletter pop-ups).
+     Only loaded after the visitor accepted the "newsletter" cookie category. -->
+<script>
+  import * as CookieConsent from "vanilla-cookieconsent"
+
+  let loaded = false
+
+  function loadMailerLite() {
+    if (loaded || !CookieConsent.acceptedCategory("newsletter")) return
+    loaded = true
+
+    ;(function (w: any, d, e, u, f) {
+      w[f] =
+        w[f] ||
+        function () {
+          ;(w[f].q = w[f].q || []).push(arguments)
+        }
+      const l = d.createElement(e) as HTMLScriptElement
+      l.async = true
+      l.src = u
+      const n = d.getElementsByTagName(e)[0]
+      n.parentNode!.insertBefore(l, n)
+    })(window, document, "script", "https://assets.mailerlite.com/js/universal.js", "ml")
+    ;(window as any).ml("account", "1682097")
+  }
+
+  // consent may already be known (returning visitor) or given later
+  loadMailerLite()
+  window.addEventListener("cc:onConsent", loadMailerLite)
+  window.addEventListener("cc:onChange", loadMailerLite)
 </script>
-<!-- End MailerLite Universal -->

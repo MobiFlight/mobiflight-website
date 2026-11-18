@@ -1,0 +1,27 @@
+---
+// Cookie consent banner + preferences modal (vanilla-cookieconsent).
+// Open the preferences from anywhere with an element that has
+// data-cc="show-preferencesModal".
+---
+
+<script>
+  import "vanilla-cookieconsent/dist/cookieconsent.css"
+  import * as CookieConsent from "vanilla-cookieconsent"
+  import { config } from "./cookie-consent-config"
+
+  CookieConsent.run(config)
+</script>
+
+<style is:global>
+  #cc-main {
+    --cc-font-family: var(--font-sans);
+    --cc-btn-primary-bg: var(--primary);
+    --cc-btn-primary-color: var(--primary-foreground);
+    --cc-btn-primary-border-color: var(--primary);
+    --cc-btn-primary-hover-bg: var(--primary-accent);
+    --cc-btn-primary-hover-border-color: var(--primary-accent);
+    --cc-toggle-on-bg: var(--primary);
+    --cc-modal-border-radius: var(--radius-lg);
+    --cc-btn-border-radius: var(--radius-md);
+  }
+</style>
