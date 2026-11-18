@@ -4,7 +4,7 @@ title: "MobiFlight - Privacy Policy"
 ---
 # Privacy Policy
 
-*Last updated: April 2026*
+*Last updated: November 2026*
 
 ---
 
@@ -123,6 +123,26 @@ LT-01110 Vilnius, Lithuania). MailerLite acts as a data processor on our behalf 
 a Data Processing Agreement (DPA). Your email address and subscription data are
 transmitted to and stored on MailerLite's servers.
 
+### 8.1 Sign-up Form
+
+On our [newsletter page](/newsletter), the sign-up form loads a script from MailerLite
+that is needed to submit your subscription. MailerLite also counts how often the form is
+displayed. For this, your browser connects to MailerLite's servers, which receive your IP
+address and technical information about your browser.
+
+**Legal basis:** Art. 6(1)(f) GDPR — legitimate interest in providing the newsletter
+sign-up you requested and in measuring how often the form is used.
+
+### 8.2 Sign-up Pop-up
+
+On other pages, we may show a newsletter sign-up pop-up provided by MailerLite. The
+MailerLite script for this pop-up is **only loaded if you have consented** to the
+"Newsletter" category in our cookie settings (see section 10). MailerLite then sets the
+cookie `mailerlite_forms_shown_<id>` to remember that the pop-up has already been shown.
+
+**Legal basis:** Art. 6(1)(a) GDPR and § 25(1) TDDDG — your consent, which you can
+withdraw at any time via "Cookie settings" at the bottom of every page.
+
 For more information, see the [MailerLite Privacy Policy](https://www.mailerlite.com/legal/privacy-policy).
 
 ---
@@ -135,16 +155,72 @@ the privacy policy of the respective platform.
 
 ---
 
-## 10. Cookies
+## 10. Cookies, Local Storage and Consent
 
-We use cookies on this website. For detailed information on which cookies we use and
-how to manage your preferences, please see our [Cookie Policy](./cookie-policy).
+### 10.1 Your Consent
+
+When you first visit our website, we ask for your consent before setting any cookies
+that are not strictly necessary. You can choose separately for each category:
+
+- **Strictly necessary** — always active, see 10.2
+- **Analytics** — Google Analytics, see 10.3
+- **Newsletter** — the MailerLite sign-up pop-up, see 8.2
+
+You can change or withdraw your consent at any time via **"Cookie settings"** at the
+bottom of every page. Withdrawing consent does not affect the lawfulness of processing
+carried out before the withdrawal. When you withdraw consent, the related cookies are
+deleted.
+
+### 10.2 Strictly Necessary Cookies and Local Storage
+
+- **`mf_cookie_consent`** (cookie, 1 year) stores your consent choice: the accepted
+  categories, the time of your choice, and a random consent ID.
+- **MobiFlight Club login** — if you log in to the MobiFlight Club, your login session is
+  stored in your browser's local storage until you log out.
+
+**Legal basis:** § 25(2) No. 2 TDDDG — strictly necessary to provide the service you
+requested; for the consent record also Art. 6(1)(c) GDPR in conjunction with Art. 7(1)
+GDPR (obligation to be able to demonstrate consent).
+
+### 10.3 Google Analytics (via Google Tag Manager)
+
+With your consent, we use Google Analytics 4, loaded via Google Tag Manager, to
+understand how our website is used and to improve it. The provider is Google Ireland
+Limited, Gordon House, Barrow Street, Dublin 4, Ireland ("Google").
+
+Google Tag Manager and Google Analytics are **only loaded after you have consented** to
+the "Analytics" category. Until then, no data is sent to Google for analytics purposes.
+
+When active, Google Analytics processes information such as the pages you visit, the
+time and duration of your visit, the referring website, your device and browser type,
+and your approximate location (derived from your IP address). According to Google,
+Google Analytics 4 does not store IP addresses. A pseudonymous identifier is stored in
+the cookies `_ga` and `_ga_<id>` (up to 2 years).
+
+Data may be transferred to Google LLC in the United States (see section 11).
+Google Analytics data is deleted after 2 months.
+
+**Legal basis:** Art. 6(1)(a) GDPR and § 25(1) TDDDG — your consent, which you can
+withdraw at any time via "Cookie settings".
+
+For more information, see
+[Google's Privacy Policy](https://policies.google.com/privacy) and
+[how Google uses information from sites that use its services](https://policies.google.com/technologies/partner-sites).
+
+### 10.4 Overview
+
+| Name | Type | Category | Provider | Purpose | Lifetime |
+|---|---|---|---|---|---|
+| `mf_cookie_consent` | Cookie | Strictly necessary | MobiFlight | Stores your consent choice | 1 year |
+| Club login session | Local storage | Strictly necessary | MobiFlight | Keeps you logged in to the MobiFlight Club | Until logout |
+| `_ga`, `_ga_<id>` | Cookie | Analytics | Google | Distinguishes visitors (pseudonymous) | Up to 2 years |
+| `mailerlite_forms_shown_<id>` | Cookie | Newsletter | MailerLite | Remembers that the sign-up pop-up was shown | Set by MailerLite |
 
 ---
 
 ## 11. Data Transfers to Third Countries
 
-Some of the services listed above (GitHub, Discord, Google/YouTube) process data in
+Some of the services listed above (GitHub, Discord, Google/YouTube, Google Analytics) process data in
 the United States. These transfers are safeguarded by:
 
 - **EU-US Data Privacy Framework** (adequacy decision by the European Commission,
@@ -161,6 +237,7 @@ the United States. These transfers are safeguarded by:
 | Contact enquiries | Until resolved + 3 years |
 | Newsletter subscriptions | Until unsubscribed |
 | Cookie consent records | 1 year |
+| Google Analytics data | 2 months |
 
 ---
 
