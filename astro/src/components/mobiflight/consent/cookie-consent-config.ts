@@ -6,10 +6,13 @@ export const config: CookieConsentConfig = {
     expiresAfterDays: 365,
   },
 
+  // block the page until the visitor has made a choice
+  disablePageInteraction: true,
+
   guiOptions: {
     consentModal: {
       layout: "box",
-      position: "bottom right",
+      position: "middle center",
       equalWeightButtons: true,
     },
     preferencesModal: {
