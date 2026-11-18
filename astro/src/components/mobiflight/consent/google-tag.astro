@@ -25,12 +25,8 @@ const gtmId = import.meta.env.PROD ? import.meta.env.PUBLIC_GTM_ID : undefined
     function applyConsent(event) {
       const granted = event.detail.cookie.categories.includes("analytics")
       const value = granted ? "granted" : "denied"
-      gtag("consent", "update", {
-        ad_storage: value,
-        ad_user_data: value,
-        ad_personalization: value,
-        analytics_storage: value,
-      })
+      // no Google Ads: ad_* signals stay denied, only analytics follows consent
+      gtag("consent", "update", { analytics_storage: value })
       if (!granted || loaded) return
       loaded = true
       dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
