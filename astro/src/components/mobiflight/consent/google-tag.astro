@@ -1,0 +1,48 @@
+---
+// Google Tag Manager with Consent Mode v2 in "basic" mode:
+// everything is denied by default and GTM is only loaded after the
+// visitor accepted the "analytics" category in the cookie consent banner.
+// Only active in production builds with PUBLIC_GTM_ID set.
+const gtmId = import.meta.env.PROD ? import.meta.env.PUBLIC_GTM_ID : undefined
+---
+
+{gtmId && (
+  <script is:inline define:vars={{ gtmId }}>
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    window.gtag = gtag
+
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    })
+
+    let loaded = false
+    function applyConsent(event) {
+      const granted = event.detail.cookie.categories.includes("analytics")
+      const value = granted ? "granted" : "denied"
+      gtag("consent", "update", {
+        ad_storage: value,
+        ad_user_data: value,
+        ad_personalization: value,
+        analytics_storage: value,
+      })
+      if (!granted || loaded) return
+      loaded = true
+      dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" })
+      const s = document.createElement("script")
+      s.async = true
+      s.src = "https://www.googletagmanager.com/gtm.js?id=" + encodeURIComponent(gtmId)
+      document.head.appendChild(s)
+    }
+
+    // fired by the cookie consent banner on every page load with existing
+    // consent, and whenever the visitor gives or changes it
+    window.addEventListener("cc:onConsent", applyConsent)
+    window.addEventListener("cc:onChange", applyConsent)
+  </script>
+)}
