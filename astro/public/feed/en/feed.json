@@ -12,11 +12,12 @@
         "src": "media/261111/wingflex-blackfriday.jpg",
         "alt": "Thumbnail for the WingFlex 10% off deal"
       },
-      "tags": ["community"],
+      "tags": ["shop", "promo"],
       "action": {
         "title": "Save now!",
         "url": "https://www.wingflex.com/?sca_ref=11453765.OPCgaGgkUj"
-      }
+      },
+      "expires": "2026-12-01"
     },
     {
       "date": "2026-11-11",
@@ -30,11 +31,12 @@
         "src": "media/261111/rowsfire-blackfriday.jpg",
         "alt": "Thumbnail for the Rowsfire Black Friday deal"
       },
-      "tags": ["community"],
+      "tags": ["shop", "promo"],
       "action": {
         "title": "Shop now!",
         "url": "https://rowsfire.com/?ref=qkxijpvj"
-      }
+      },
+      "expires": "2026-12-01"
     },
     {
       "date": "2026-09-28",
@@ -106,7 +108,8 @@
       "action": {
         "title": "Follow us!",
         "url": "https://discord.com/channels/608690978081210392/1542839055262421013"
-      }
+      },
+      "expires": "2026-11-01"
     },
     {
       "date": "2026-07-29",
