@@ -1,6 +1,25 @@
 {
   "community": [
     {
+      "date": "2026-11-19",
+      "title": "Black Friday Sale!",
+      "content": [
+        "MOZA offers UP TO 13% OFF for their flight sim products!",
+        "Treat yourself with force-feedback goodness!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/261119/moza-blackfriday.jpg",
+        "alt": "Thumbnail for the MOZA Black Friday deal"
+      },
+      "tags": ["shop", "promo"],
+      "action": {
+        "title": "Save now!",
+        "url": "https://mozaracing.com/pages/black-friday-2026?ref=MOBIFLIGHT"
+      },
+      "expires": "2026-12-01"
+    },
+    {
       "date": "2026-11-10",
       "title": "10% Off Sitewide!",
       "content": [

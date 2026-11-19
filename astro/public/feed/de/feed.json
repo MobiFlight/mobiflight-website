@@ -1,6 +1,25 @@
 {
   "community": [
     {
+      "date": "2026-11-19",
+      "title": "Black Friday Angebote!",
+      "content": [
+        "MOZA bietet BIS ZU 13% RABATT auf ihre Flight-Sim-Produkte!",
+        "Gönn dir Force-Feedback für dein Setup!"
+      ],
+      "media": {
+        "type": "image",
+        "src": "media/261119/moza-blackfriday.jpg",
+        "alt": "Thumbnail for the MOZA Black Friday deal"
+      },
+      "tags": ["shop", "promo"],
+      "action": {
+        "title": "Jetzt sparen!",
+        "url": "https://mozaracing.com/pages/black-friday-2026?ref=MOBIFLIGHT"
+      },
+      "expires": "2026-12-01"
+    },
+    {
       "date": "2026-11-10",
       "title": "10% Rabatt auf alles!",
       "content": [
@@ -12,11 +31,12 @@
         "src": "media/261111/wingflex-blackfriday.jpg",
         "alt": "WingFlex 10% Rabatt Angebot"
       },
-      "tags": ["community"],
+      "tags": ["shop", "promo"],
       "action": {
         "title": "Angebote sichern!",
         "url": "https://www.wingflex.com/?sca_ref=11453765.OPCgaGgkUj"
-      }
+      },
+      "expires": "2026-12-01"
     },
     {
       "date": "2026-11-11",
@@ -30,11 +50,12 @@
         "src": "media/261111/rowsfire-blackfriday.jpg",
         "alt": "Rowsfire Black Friday Angebot"
       },
-      "tags": ["community"],
+      "tags": ["shop", "promo"],
       "action": {
         "title": "Jetzt einkaufen!",
         "url": "https://rowsfire.com/?ref=qkxijpvj"
-      }
+      },
+      "expires": "2026-12-01"
     },
     {
       "date": "2026-09-28",
