@@ -8,6 +8,7 @@ import {
 } from "@/components/starwind/card"
 import { Button } from "@/components/starwind/button"
 import LinkWrap from "@/components/mobiflight/link-wrap.astro"
+import { isCurrentNewsItem } from "@/lib/news"
 
 export interface NewsItem {
   date: string
@@ -23,6 +24,8 @@ export interface NewsItem {
     title: string
     url: string
   }
+  // last day the item is shown (YYYY-MM-DD)
+  expires?: string
 }
 
 interface Props {
@@ -31,9 +34,15 @@ interface Props {
 }
 
 const { item, baseUrl } = Astro.props
+// shown from `date` until `expires`; news.astro checks again in the browser
+const current = isCurrentNewsItem(item)
 ---
 
-<Card>
+<Card
+  data-news-date={item.date}
+  data-news-expires={item.expires}
+  hidden={!current}
+>
   <CardHeader>
     <p class="text-sm text-muted-foreground">{item.date}</p>
     <CardTitle class="text-lg">{item.title}</CardTitle>

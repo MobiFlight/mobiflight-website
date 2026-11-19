@@ -21,3 +21,16 @@ import type { NewsItem } from "@/components/mobiflight/news/news-card.astro"
     </div>
   </section>
 </Container>
+
+<script>
+  import { isCurrentNewsItem } from "@/lib/news"
+
+  // The page is built ahead of time, so check again with the visitor's date:
+  // items are hidden once they expire and shown once their date has come.
+  document.querySelectorAll<HTMLElement>("[data-news-date]").forEach((card) => {
+    card.hidden = !isCurrentNewsItem({
+      date: card.dataset.newsDate ?? "",
+      expires: card.dataset.newsExpires,
+    })
+  })
+</script>
