@@ -48,12 +48,15 @@
         "description": "A cleaner and more modern interface",
         "status": "completed"
       },
-      { "description": "A more responsive foundation for future improvements", "status": "completed" },
+      {
+        "description": "A more responsive foundation for future improvements",
+        "status": "completed"
+      },
       { "description": "Input Config Wizards", "status": "completed" },
-      { "description": "Output Config Wizards", "status": "started" }
+      { "description": "Output Config Wizards", "status": "completed" }
     ],
-    "issues": [ 1747 ],
-    "status": "started"
+    "issues": [1747],
+    "status": "completed"
   },
   {
     "id": "saitek-panels",
@@ -61,10 +64,13 @@
     "problem": "Users with Saitek panels currently cannot use these devices with MobiFlight because they are non-standard USB HID controllers.",
     "outcome": "Adding support for Saitek panels will make it easier for more cockpit builders to keep using their existing hardware within the MobiFlight ecosystem.",
     "features": [
-      { "description": "Support for the Saitek Switch Panel" },
+      {
+        "description": "Support for the Saitek Switch Panel",
+        "status": "completed"
+      },
       {
         "description": "Support for the Saitek Multi Panel",
-        "status": "started"
+        "status": "completed"
       },
       {
         "description": "Support for the Saitek Radio Panel",
@@ -72,7 +78,7 @@
       }
     ],
     "issues": [2338],
-    "status": "started"
+    "status": "completed"
   },
   {
     "id": "controller-management-ui",
