@@ -15,7 +15,47 @@ permissions:
   pull-requests: write
 
 jobs:
+  # Lint and type check need Node >= 24.16 (eslint-plugin-astro), which Azure doesn't offer yet.
+  lint:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Lint and Type Check
+    defaults:
+      run:
+        working-directory: astro
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: astro/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check
+
+  # Build on the same Node version Azure Static Web Apps uses, so a pass here means the deploy build passes.
+  build:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build (Azure Node version)
+    defaults:
+      run:
+        working-directory: astro
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24.13.0
+          cache: npm
+          cache-dependency-path: astro/package-lock.json
+      - run: npm ci
+      - run: npm run build
+        env:
+          PUBLIC_GTM_ID: ${{ vars.PUBLIC_GTM_ID }}
+
   build_and_deploy_job:
+    needs: [lint, build]
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
